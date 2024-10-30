@@ -1,6 +1,5 @@
 extends Node3D
-
-@onready var character: CharacterBody3D = $"../CharacterBody3D"
+@onready var character: CharacterBody3D = $"../player"
 @export var follow_speed: float = 5.0  # Velocidad de seguimiento
 @export var damping: float = 0.1  # Amortiguación (damping)
 # Called when the node enters the scene tree for the first time.
