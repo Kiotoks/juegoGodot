@@ -1,11 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://byhej6jio1gqc"]
+[gd_scene load_steps=8 format=3 uid="uid://byhej6jio1gqc"]
 
 [ext_resource type="PackedScene" uid="uid://warasjiex0v" path="res://player.tscn" id="1_l5qdr"]
-[ext_resource type="Script" path="res://pivot.gd" id="2_ql7in"]
+[ext_resource type="Script" path="res://scripts/miniGame.gd" id="1_t7eus"]
+[ext_resource type="Script" path="res://scripts/pivot.gd" id="2_ql7in"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na8b7"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
+sky_horizon_color = Color(0.492674, 0.695581, 0.729119, 1)
+sky_curve = 0.139955
+ground_bottom_color = Color(0.341608, 0.620276, 0.843333, 1)
+ground_horizon_color = Color(0.494118, 0.694118, 0.729412, 1)
+sun_angle_max = 0.0
 
 [sub_resource type="Sky" id="Sky_t846e"]
 sky_material = SubResource("ProceduralSkyMaterial_na8b7")
@@ -16,7 +21,11 @@ sky = SubResource("Sky_t846e")
 tonemap_mode = 2
 glow_enabled = true
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7bfin"]
+size = Vector3(54.0399, 12.699, 51.3671)
+
 [node name="Main" type="Node3D"]
+script = ExtResource("1_t7eus")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -31,28 +40,25 @@ use_collision = true
 size = Vector3(19.3474, 0.234375, 13.1451)
 
 [node name="player" parent="." instance=ExtResource("1_l5qdr")]
-transform = Transform3D(0.989152, 0, 0, 0, 0.989152, 0, 0, 0, 0.989152, -0.543097, 1.77504, 1.89743)
-teclaAdelante = "move_forward"
-teclaAtras = "move_backwards"
-teclaIzquierda = "turn_left"
-teclaDerecha = "turn_right"
-teclaSaltar = "jump"
-teclaAccion = "accion"
+transform = Transform3D(-0.0446122, 0, -0.988145, 0, 0.989152, 0, 0.988145, 0, -0.0446122, -0.543097, 1.77504, 1.86535)
 
 [node name="player2" parent="." instance=ExtResource("1_l5qdr")]
-transform = Transform3D(0.989152, 0, 0, 0, 0.989152, 0, 0, 0, 0.989152, 0, 1.99456, 0)
-numero_de_jugador = 3
-teclaAdelante = "move_forwardP2"
-teclaAtras = "move_backwardsP2"
-teclaIzquierda = "turn_leftP2"
-teclaDerecha = "turn_rightP2"
-teclaSaltar = "jumpP2"
-teclaAccion = "accionP2"
+transform = Transform3D(-0.206501, 0, -0.967357, 0, 0.989152, 0, 0.967357, 0, -0.206501, 0, 1.99456, 0)
+numero_de_jugador = 1
 
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 4.99404, 3.29226, 1.37262)
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 4.99404, 4.8163, 1.37262)
 script = ExtResource("2_ql7in")
 follow_speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-4.31236e-08, -0.163447, 0.986553, -7.14448e-09, 0.986553, 0.163447, -1, -1.77636e-15, -4.37114e-08, 1.50564, -0.0179262, -0.652812)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26706, -12.7285, 4.26243)
+shape = SubResource("BoxShape3D_7bfin")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

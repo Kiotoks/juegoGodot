@@ -3,22 +3,27 @@ extends CharacterBody3D
 const JUMP_VELOCITY = 4.5
 
 @onready var modelo3D: Node3D = $"3DGodotRobot"
+
+@export var numero_de_jugador = 0 
+
+@onready var movimientoJugador = StaticData.charOpcs["teclas"][numero_de_jugador] 
+
+@onready var teclaAdelante = movimientoJugador["tecla_adelante"]
+@onready var teclaAtras = movimientoJugador["tecla_atras"]
+@onready var teclaIzquierda = movimientoJugador["tecla_izquierda"]
+@onready var teclaDerecha = movimientoJugador["tecla_derecha"]
+@onready var teclaSaltar = movimientoJugador["tecla_saltar"]
+@onready var teclaAccion= movimientoJugador["tecla_accion"]
+
 var animacion
 var cuerpo
 var en_ataque = false
 
-@export var numero_de_jugador = 0  # Velocidad de movimiento
+ # Velocidad de movimiento
 
 @export var move_speed = 1.0  # Velocidad de movimiento
 @export var rotation_speed = 5.0  # Velocidad de rotación
 @export var force_strength = 10.0  # Fuerza aplicada al personaje en frente
-
-@export var teclaAdelante: String  
-@export var teclaAtras: String 
-@export var teclaIzquierda: String  
-@export var teclaDerecha: String
-@export var teclaSaltar: String
-@export var teclaAccion: String
 
 # Nodo RayCast3D para detectar al personaje en frente
 @export var raycast : RayCast3D
@@ -87,7 +92,7 @@ func aplicar_fuerza_a_personaje_en_frente():
 		var personaje_en_frente = raycast.get_collider()
 		if personaje_en_frente and personaje_en_frente is CharacterBody3D:
 			var force_direction = -transform.basis.z.normalized()
-			force_direction += Vector3(0, 0.2, 0)
+			force_direction += Vector3(0, 0.3, 0)
 			personaje_en_frente.velocity += force_direction * force_strength
 			
 func _on_animation_finished(anim_name):

@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://7oi7j262hem4"]
 
-[ext_resource type="Texture2D" uid="uid://37xdrfcsgf8j" path="res://3DGodotRobot_GodotPalette.png" id="1_5url4"]
+[ext_resource type="Texture2D" uid="uid://37xdrfcsgf8j" path="res://materiales/3DGodotRobot_GodotPalette.png" id="1_5url4"]
 
 [resource]
 albedo_texture = ExtResource("1_5url4")

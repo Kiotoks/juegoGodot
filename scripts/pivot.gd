@@ -12,7 +12,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
-	if character:
+	if is_instance_valid(character):
 		# Mantén la posición X e Y de la cámara pero sigue la Z del jugador
 		# Calcula la distancia en Z entre la cámara y el jugador
 		var z_difference = character.global_transform.origin.z - global_transform.origin.z
