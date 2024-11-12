@@ -16,7 +16,6 @@ const JUMP_VELOCITY = 4.5
 @onready var teclaAccion= movimientoJugador["tecla_accion"]
 
 var animacion
-var cuerpo
 var en_ataque = false
 
  # Velocidad de movimiento
@@ -98,3 +97,12 @@ func aplicar_fuerza_a_personaje_en_frente():
 func _on_animation_finished(anim_name):
 	if anim_name == "Attack1":
 		en_ataque = false  # Salir del estado de ataque
+		
+func set_numero_jugador( num: int):
+	if num >= 0 and num <4:
+		numero_de_jugador = num;
+
+func set_coords(x, z):
+	transform.origin.x = x
+	transform.origin.z = z
+	

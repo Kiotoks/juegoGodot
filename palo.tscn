@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlfowopk7iig2"]
+
+[ext_resource type="Script" path="res://scripts/palo.gd" id="1_8rspx"]
+[ext_resource type="ArrayMesh" uid="uid://cbuxvovi527p6" path="res://swiperLong_teamBlue.obj" id="2_v231j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tv5px"]
+
+[node name="palo" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.874, 4.5)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+mass = 412.442
+script = ExtResource("1_8rspx")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.05344e-07, -1, 0, 4.69771, -4.37114e-08, 0, 0, 5)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.12022, 0, 0, 0, 2.07613, 0, 0, -8.52651e-14, 1.17491, 0, 0, 0)
+shape = SubResource("BoxShape3D_tv5px")
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -2.05344e-07, -1, 0, 4.69771, -4.37114e-08, 0, 0, 5)
+visible = false
+use_collision = true
+sides = 32
+
+[node name="SwiperLongTeamBlue" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.4, 0, 0, 0, 1.4, 0, 0, 0, 1.58482, -0.0030241, -1.46674, -0.314451)
+mesh = ExtResource("2_v231j")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

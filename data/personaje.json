@@ -4,37 +4,37 @@
   "jumpForce": 5,
   "forceStrength": 10,
   "teclas": [
-    {
-      "tecla_adelante": "move_forward",
-      "tecla_atras": "move_backwards",
-      "tecla_izquierda": "turn_left",
-      "tecla_derecha": "turn_right",
-      "tecla_saltar": "jump",
-      "tecla_accion": "accion"
-    },
-    {
-      "tecla_adelante": "move_forwardP2",
-      "tecla_atras": "move_backwardsP2",
-      "tecla_izquierda": "turn_leftP2",
-      "tecla_derecha": "turn_rightP2",
-      "tecla_saltar": "jumpP2",
-      "tecla_accion": "accionP2"
-    },
-    {
-      "tecla_adelante": "move_forwardP3",
-      "tecla_atras": "move_backwardsP3",
-      "tecla_izquierda": "turn_leftP3",
-      "tecla_derecha": "turn_rightP3",
-      "tecla_saltar": "jumpP3",
-      "tecla_accion": "accionP3"
-    },
-    {
-      "tecla_adelante": "move_forwardP4",
-      "tecla_atras": "move_backwardsP4",
-      "tecla_izquierda": "turn_leftP4",
-      "tecla_derecha": "turn_rightP4",
-      "tecla_saltar": "jumpP4",
-      "tecla_accion": "accionP4"
-    }
+	{
+	  "tecla_adelante": "move_forward",
+	  "tecla_atras": "move_backwards",
+	  "tecla_izquierda": "turn_left",
+	  "tecla_derecha": "turn_right",
+	  "tecla_saltar": "jump",
+	  "tecla_accion": "accion"
+	},
+	{
+	  "tecla_adelante": "move_forwardP2",
+	  "tecla_atras": "move_backwardsP2",
+	  "tecla_izquierda": "turn_leftP2",
+	  "tecla_derecha": "turn_rightP2",
+	  "tecla_saltar": "jumpP2",
+	  "tecla_accion": "accionP2"
+	},
+	{
+	  "tecla_adelante": "move_forwardP3",
+	  "tecla_atras": "move_backwardsP3",
+	  "tecla_izquierda": "turn_leftP3",
+	  "tecla_derecha": "turn_rightP3",
+	  "tecla_saltar": "jumpP3",
+	  "tecla_accion": "accionP3"
+	},
+	{
+	  "tecla_adelante": "move_forwardP4",
+	  "tecla_atras": "move_backwardsP4",
+	  "tecla_izquierda": "turn_leftP4",
+	  "tecla_derecha": "turn_rightP4",
+	  "tecla_saltar": "jumpP4",
+	  "tecla_accion": "accionP4"
+	}
   ]
 }

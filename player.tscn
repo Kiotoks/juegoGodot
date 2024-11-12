@@ -13,7 +13,7 @@ points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607,
 [node name="player" type="CharacterBody3D" node_paths=PackedStringArray("raycast")]
 transform = Transform3D(0.994561, 0, 0, 0, 0.994561, 0, 0, 0, 0.994561, 0, 1, 0)
 script = ExtResource("1_6e6mx")
-move_speed = 3.0
+move_speed = 4.0
 raycast = NodePath("RayCast3D")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]

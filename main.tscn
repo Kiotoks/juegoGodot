@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://byhej6jio1gqc"]
+[gd_scene load_steps=9 format=3 uid="uid://byhej6jio1gqc"]
 
-[ext_resource type="PackedScene" uid="uid://warasjiex0v" path="res://player.tscn" id="1_l5qdr"]
 [ext_resource type="Script" path="res://scripts/miniGame.gd" id="1_t7eus"]
 [ext_resource type="Script" path="res://scripts/pivot.gd" id="2_ql7in"]
+[ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://palo.tscn" id="3_0cbyl"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na8b7"]
 sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
@@ -24,8 +24,12 @@ glow_enabled = true
 [sub_resource type="BoxShape3D" id="BoxShape3D_7bfin"]
 size = Vector3(54.0399, 12.699, 51.3671)
 
-[node name="Main" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sub8p"]
+albedo_color = Color(0.447059, 0.290196, 0.152941, 1)
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("spawners")]
 script = ExtResource("1_t7eus")
+spawners = [NodePath("spawner"), NodePath("spawner3"), NodePath("spawner2"), NodePath("spawner4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
@@ -34,25 +38,15 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6afsl")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51096, -0.358544, 3.77657)
-use_collision = true
-size = Vector3(19.3474, 0.234375, 13.1451)
-
-[node name="player" parent="." instance=ExtResource("1_l5qdr")]
-transform = Transform3D(-0.0446122, 0, -0.988145, 0, 0.989152, 0, 0.988145, 0, -0.0446122, -0.543097, 1.77504, 1.86535)
-
-[node name="player2" parent="." instance=ExtResource("1_l5qdr")]
-transform = Transform3D(-0.206501, 0, -0.967357, 0, 0.989152, 0, 0.967357, 0, -0.206501, 0, 1.99456, 0)
-numero_de_jugador = 1
-
 [node name="Pivot" type="Node3D" parent="."]
-transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 4.99404, 4.8163, 1.37262)
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 4.994, 4.816, 4.697)
 script = ExtResource("2_ql7in")
 follow_speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
-transform = Transform3D(-4.31236e-08, -0.163447, 0.986553, -7.14448e-09, 0.986553, 0.163447, -1, -1.77636e-15, -4.37114e-08, 1.50564, -0.0179262, -0.652812)
+transform = Transform3D(-4.37114e-08, -0.0279216, 0.999611, 1.77636e-15, 0.999611, 0.0279216, -1, 1.22049e-09, -4.36943e-08, 17.9403, 1.62171, 0)
+fov = 31.5
+size = 18.308
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
@@ -60,5 +54,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26706, -12.7285, 4.26243)
 shape = SubResource("BoxShape3D_7bfin")
+
+[node name="spawner4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50525, 1.16289, 1.13585)
+
+[node name="spawner2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16289, 0.105519)
+
+[node name="spawner3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21902, 1.16289, 5.59156)
+
+[node name="spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.581444, 5.40876)
+
+[node name="centro" type="CSGCylinder3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2.53302, 0, 0, 0, 2, -5.5, 1.1572, 4.5)
+material_override = SubResource("StandardMaterial3D_sub8p")
+use_collision = true
+sides = 32
+
+[node name="base" type="CSGCylinder3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -5.75581, -1.04887, 4.69723)
+use_collision = true
+sides = 32
+
+[node name="palo" parent="." instance=ExtResource("3_0cbyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51122, 0.904959, 4.49925)
+rotation_speed = 1.7
+
+[node name="palo2" parent="." instance=ExtResource("3_0cbyl")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 2.65621, 4.5)
+rotation_speed = 2.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,12 +1,13 @@
 extends Node
 
-@onready var player: CharacterBody3D = $player
-@onready var player_2: CharacterBody3D = $player2
-# Called when the node enters the scene tree for the first time.
-var arrayJugadores = [player, player_2]
+@export var spawners: Array[Node3D]
 
-
+var cantJugadores = StaticData.cantJugadores
+var jugadores = []
 func _ready() -> void:
+	spawnear_jugadores()
+	for i in range(cantJugadores):
+		jugadores.append(i)
 	pass # Replace with function body.
 
 
@@ -14,10 +15,26 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
-
 func _on_area_3d_body_entered(body) -> void:
 	if body is CharacterBody3D:
-		print(body.numero_de_jugador)
+		var numeroJugador = body.numero_de_jugador
+		for j in jugadores:
+			if numeroJugador == j:
+				jugadores.erase(numeroJugador)
+				if len(jugadores) == 1:
+					terminar_minijuego()
 		body.queue_free()
 	pass # Replace with function body.
+
+func spawnear_jugadores():
+	var escenaJugador = preload("res://player.tscn")
+	for i in range(cantJugadores):
+		var jugador = escenaJugador.instantiate()
+		jugador.set_numero_jugador(i)
+		jugador.set_coords(spawners[i].global_transform.origin.x, spawners[i].global_transform.origin.z,)
+		add_child(jugador)
+
+func terminar_minijuego():
+	
+	print("gano"+ str(jugadores[0]))
+	StaticData.minijuego_terminado(jugadores[0])
