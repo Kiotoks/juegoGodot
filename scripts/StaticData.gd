@@ -4,6 +4,7 @@ var charOpcs = {}
 var data_file_path = "res://data/personaje.json"
 
 var cantJugadores = 2
+var cantRondas= 2
 var cantGanados = []
 
 # Called when the node enters the scene tree for the first time.
