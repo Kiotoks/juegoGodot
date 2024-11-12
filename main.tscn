@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://byhej6jio1gqc"]
+[gd_scene load_steps=10 format=3 uid="uid://byhej6jio1gqc"]
 
 [ext_resource type="Script" path="res://scripts/miniGame.gd" id="1_t7eus"]
 [ext_resource type="Script" path="res://scripts/pivot.gd" id="2_ql7in"]
@@ -27,6 +27,9 @@ size = Vector3(54.0399, 12.699, 51.3671)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sub8p"]
 albedo_color = Color(0.447059, 0.290196, 0.152941, 1)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uobgi"]
+albedo_color = Color(0.242708, 0.498875, 2.88785e-07, 1)
+
 [node name="Main" type="Node3D" node_paths=PackedStringArray("spawners")]
 script = ExtResource("1_t7eus")
 spawners = [NodePath("spawner"), NodePath("spawner3"), NodePath("spawner2"), NodePath("spawner4")]
@@ -45,11 +48,13 @@ follow_speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(-4.37114e-08, -0.0279216, 0.999611, 1.77636e-15, 0.999611, 0.0279216, -1, 1.22049e-09, -4.36943e-08, 17.9403, 1.62171, 0)
+current = true
 fov = 31.5
 size = 18.308
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26706, -12.7285, 4.26243)
@@ -77,6 +82,7 @@ sides = 32
 transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -5.75581, -1.04887, 4.69723)
 use_collision = true
 sides = 32
+material = SubResource("StandardMaterial3D_uobgi")
 
 [node name="palo" parent="." instance=ExtResource("3_0cbyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51122, 0.904959, 4.49925)

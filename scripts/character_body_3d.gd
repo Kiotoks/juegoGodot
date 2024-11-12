@@ -15,6 +15,9 @@ const JUMP_VELOCITY = 4.5
 @onready var teclaSaltar = movimientoJugador["tecla_saltar"]
 @onready var teclaAccion= movimientoJugador["tecla_accion"]
 
+@export var area_shape : Area3D  # Referencia al CollisionShape de tu área (puede ser un cubo, esfera, etc.)
+
+
 var animacion
 var en_ataque = false
 
@@ -81,15 +84,15 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 	# Aplica fuerza al personaje en frente cuando se toca la tecla de acción
-	if Input.is_action_just_pressed(teclaAccion):
+	if Input.is_action_just_pressed(teclaAccion) and not en_ataque:
 		en_ataque = true
 		animacion.play("Attack1")
 		aplicar_fuerza_a_personaje_en_frente()
 
 func aplicar_fuerza_a_personaje_en_frente():
-	if raycast.is_colliding():
-		var personaje_en_frente = raycast.get_collider()
-		if personaje_en_frente and personaje_en_frente is CharacterBody3D:
+	var objetos_enfrente =	area_shape.get_overlapping_bodies()
+	for personaje_en_frente in objetos_enfrente:
+		if personaje_en_frente != self and personaje_en_frente is CharacterBody3D:
 			var force_direction = -transform.basis.z.normalized()
 			force_direction += Vector3(0, 0.3, 0)
 			personaje_en_frente.velocity += force_direction * force_strength

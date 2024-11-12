@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crcc7llau7d8"
+path="res://.godot/imported/tileSmall_teamYellow.obj-571ffc1117bd9ff9e89e7bc6e91eb09c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tileSmall_teamYellow.obj-571ffc1117bd9ff9e89e7bc6e91eb09c.mesh"]
+
+source_file="res://Models/obj/tileSmall_teamYellow.obj"
+dest_files=["res://.godot/imported/tileSmall_teamYellow.obj-571ffc1117bd9ff9e89e7bc6e91eb09c.mesh", "res://.godot/imported/tileSmall_teamYellow.obj-571ffc1117bd9ff9e89e7bc6e91eb09c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

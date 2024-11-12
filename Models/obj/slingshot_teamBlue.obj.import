@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkts3j50ijju4"
+path="res://.godot/imported/slingshot_teamBlue.obj-34602a8a84dc00e391cadeab2e450ea9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/slingshot_teamBlue.obj-34602a8a84dc00e391cadeab2e450ea9.mesh"]
+
+source_file="res://Models/obj/slingshot_teamBlue.obj"
+dest_files=["res://.godot/imported/slingshot_teamBlue.obj-34602a8a84dc00e391cadeab2e450ea9.mesh", "res://.godot/imported/slingshot_teamBlue.obj-34602a8a84dc00e391cadeab2e450ea9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

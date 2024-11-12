@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drn5jtklkhre8"
+path="res://.godot/imported/blaster_teamRed.obj-131167ca7f930fd4c1d886014e17d79f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/blaster_teamRed.obj-131167ca7f930fd4c1d886014e17d79f.mesh"]
+
+source_file="res://Models/obj/blaster_teamRed.obj"
+dest_files=["res://.godot/imported/blaster_teamRed.obj-131167ca7f930fd4c1d886014e17d79f.mesh", "res://.godot/imported/blaster_teamRed.obj-131167ca7f930fd4c1d886014e17d79f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

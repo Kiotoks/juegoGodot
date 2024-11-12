@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgusk2gjpd8jy"
+path="res://.godot/imported/tileLarge_teamRed.obj-5cbc41bb9f8ff63f5f2514b2ffd00bc3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tileLarge_teamRed.obj-5cbc41bb9f8ff63f5f2514b2ffd00bc3.mesh"]
+
+source_file="res://Models/obj/tileLarge_teamRed.obj"
+dest_files=["res://.godot/imported/tileLarge_teamRed.obj-5cbc41bb9f8ff63f5f2514b2ffd00bc3.mesh", "res://.godot/imported/tileLarge_teamRed.obj-5cbc41bb9f8ff63f5f2514b2ffd00bc3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

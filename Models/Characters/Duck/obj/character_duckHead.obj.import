@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cie35rmww8tdn"
+path="res://.godot/imported/character_duckHead.obj-5002c2dbda68da9af245158919ed001d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/character_duckHead.obj-5002c2dbda68da9af245158919ed001d.mesh"]
+
+source_file="res://Models/Characters/Duck/obj/character_duckHead.obj"
+dest_files=["res://.godot/imported/character_duckHead.obj-5002c2dbda68da9af245158919ed001d.mesh", "res://.godot/imported/character_duckHead.obj-5002c2dbda68da9af245158919ed001d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bg7pclt63bwuf"
+path="res://.godot/imported/swiper_teamYellow.obj-e14406b9c3b887e7279538bc35ba7651.mesh"
+
+[deps]
+
+files=["res://.godot/imported/swiper_teamYellow.obj-e14406b9c3b887e7279538bc35ba7651.mesh"]
+
+source_file="res://Models/obj/swiper_teamYellow.obj"
+dest_files=["res://.godot/imported/swiper_teamYellow.obj-e14406b9c3b887e7279538bc35ba7651.mesh", "res://.godot/imported/swiper_teamYellow.obj-e14406b9c3b887e7279538bc35ba7651.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

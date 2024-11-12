@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://buqpapjjwjxcl"
+path="res://.godot/imported/detail_desert.obj-7de7c0be58b36cdaf4fd2cedb68d585f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/detail_desert.obj-7de7c0be58b36cdaf4fd2cedb68d585f.mesh"]
+
+source_file="res://Models/obj/detail_desert.obj"
+dest_files=["res://.godot/imported/detail_desert.obj-7de7c0be58b36cdaf4fd2cedb68d585f.mesh", "res://.godot/imported/detail_desert.obj-7de7c0be58b36cdaf4fd2cedb68d585f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

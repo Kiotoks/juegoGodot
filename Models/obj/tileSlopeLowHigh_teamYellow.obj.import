@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://chy3prv2iygs4"
+path="res://.godot/imported/tileSlopeLowHigh_teamYellow.obj-bf645c0a0b9738cbadf6a2e1e1197a65.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tileSlopeLowHigh_teamYellow.obj-bf645c0a0b9738cbadf6a2e1e1197a65.mesh"]
+
+source_file="res://Models/obj/tileSlopeLowHigh_teamYellow.obj"
+dest_files=["res://.godot/imported/tileSlopeLowHigh_teamYellow.obj-bf645c0a0b9738cbadf6a2e1e1197a65.mesh", "res://.godot/imported/tileSlopeLowHigh_teamYellow.obj-bf645c0a0b9738cbadf6a2e1e1197a65.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

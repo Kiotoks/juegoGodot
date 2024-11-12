@@ -2,7 +2,7 @@
 extends RigidBody3D
 
 @export var rotation_speed = 1.0  # Ajusta la velocidad de rotación
-@export var push_force = 20.0
+@export var push_force = 30.0
 @export var up_force = 5.0
 
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://7y22ogl08415"
+path="res://.godot/imported/gateLarge_teamBlue.obj-ae74273aec944e0074ee8f9960eadada.mesh"
+
+[deps]
+
+files=["res://.godot/imported/gateLarge_teamBlue.obj-ae74273aec944e0074ee8f9960eadada.mesh"]
+
+source_file="res://Models/obj/gateLarge_teamBlue.obj"
+dest_files=["res://.godot/imported/gateLarge_teamBlue.obj-ae74273aec944e0074ee8f9960eadada.mesh", "res://.godot/imported/gateLarge_teamBlue.obj-ae74273aec944e0074ee8f9960eadada.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

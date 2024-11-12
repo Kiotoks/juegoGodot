@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bwm0txx5nth2x"
+path="res://.godot/imported/sword_teamYellow.obj-aa66cf26ffd6d72e9e641c2ee983cfe5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/sword_teamYellow.obj-aa66cf26ffd6d72e9e641c2ee983cfe5.mesh"]
+
+source_file="res://Models/obj/sword_teamYellow.obj"
+dest_files=["res://.godot/imported/sword_teamYellow.obj-aa66cf26ffd6d72e9e641c2ee983cfe5.mesh", "res://.godot/imported/sword_teamYellow.obj-aa66cf26ffd6d72e9e641c2ee983cfe5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

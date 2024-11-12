@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drlbt1d1tv1q7"
+path="res://.godot/imported/tileSlopeMediumHigh_teamRed.obj-d9b7fea7e92e3ce7ead63f361f0722ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tileSlopeMediumHigh_teamRed.obj-d9b7fea7e92e3ce7ead63f361f0722ae.mesh"]
+
+source_file="res://Models/obj/tileSlopeMediumHigh_teamRed.obj"
+dest_files=["res://.godot/imported/tileSlopeMediumHigh_teamRed.obj-d9b7fea7e92e3ce7ead63f361f0722ae.mesh", "res://.godot/imported/tileSlopeMediumHigh_teamRed.obj-d9b7fea7e92e3ce7ead63f361f0722ae.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
