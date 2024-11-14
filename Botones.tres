@@ -6,22 +6,26 @@
 bg_color = Color(0.348117, 0.597143, 0.835252, 1)
 border_width_bottom = 5
 border_color = Color(0.254902, 0.498039, 0.72549, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 shadow_color = Color(0.0577458, 0.226592, 0.192769, 0.6)
 shadow_size = 4
 shadow_offset = Vector2(1, 2)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rts8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 20.0
 bg_color = Color(0.254329, 0.499741, 0.725293, 1)
 border_width_bottom = 5
 border_color = Color(0.167026, 0.364667, 0.547084, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 shadow_color = Color(0.0156863, 0.156863, 0.270588, 0.6)
 shadow_size = 4
 shadow_offset = Vector2(1, 2)
@@ -30,16 +34,17 @@ shadow_offset = Vector2(1, 2)
 bg_color = Color(0.160343, 0.353079, 0.53086, 1)
 border_width_bottom = 5
 border_color = Color(0.0892803, 0.22101, 0.341649, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
 shadow_color = Color(0.0151613, 0.15873, 0.270733, 0.6)
 shadow_size = 4
 shadow_offset = Vector2(1, 2)
 
 [resource]
 default_font = ExtResource("1_ihjkc")
+Button/constants/outline_size = 0
 Button/styles/hover = SubResource("StyleBoxFlat_8dw0b")
 Button/styles/normal = SubResource("StyleBoxFlat_2rts8")
 Button/styles/pressed = SubResource("StyleBoxFlat_ygm67")

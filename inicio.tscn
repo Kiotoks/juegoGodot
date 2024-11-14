@@ -48,19 +48,20 @@ fov = 31.2288
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="CanvasLayer"]
+texture_filter = 2
 layout_mode = 3
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -170.0
+offset_left = -132.0
 offset_top = -94.0
-offset_right = -170.0
+offset_right = -132.0
 offset_bottom = -94.0
 grow_horizontal = 0
 grow_vertical = 2
-scale = Vector2(1.96362, 2.07436)
+scale = Vector2(0.719, 0.8)
 size_flags_horizontal = 4
 theme = ExtResource("1_nw5r3")
 script = ExtResource("1_8nkfe")
@@ -82,13 +83,15 @@ layout_mode = 2
 
 [node name="BotonJugar" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
-text = "Jugar"
+theme_override_font_sizes/font_size = 70
+text = " Jugar"
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 
 [node name="BotonOpciones" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 70
 text = "Ajustes"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer"]
@@ -96,6 +99,7 @@ layout_mode = 2
 
 [node name="BotonSalir" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 70
 text = "Salir"
 
 [node name="tree_forest_gltf2" parent="." instance=ExtResource("5_q30lf")]

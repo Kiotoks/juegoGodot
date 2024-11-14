@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://dnfvca48bf657"]
+
+[ext_resource type="PackedScene" uid="uid://oqs4g3iv8uqg" path="res://Models/dae/tileHigh_desert.dae" id="1_1yuin"]
+[ext_resource type="PackedScene" uid="uid://df3g7vrwwqbuq" path="res://Models/dae/tileHigh_forest.dae" id="2_1r4lf"]
+[ext_resource type="PackedScene" uid="uid://bk2eqjq370ha4" path="res://Models/dae/tileHigh_teamBlue.dae" id="3_05c43"]
+[ext_resource type="PackedScene" uid="uid://bwybcvuc0mpdy" path="res://Models/dae/tileHigh_teamRed.dae" id="4_bijtt"]
+[ext_resource type="PackedScene" uid="uid://cjplyr2tep217" path="res://Models/dae/tileSlopeLowHigh_teamBlue.dae" id="5_mgur4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bniox"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_si7kk"]
+size = Vector3(1.099, 1, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="tileHigh_desert" parent="." instance=ExtResource("1_1yuin")]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_desert"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_desert/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_bniox")
+
+[node name="tileHigh_forest" parent="." instance=ExtResource("2_1r4lf")]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_forest"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_forest/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_bniox")
+
+[node name="tileHigh_teamBlue" parent="." instance=ExtResource("3_05c43")]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_teamBlue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_teamBlue/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 1, 0)
+shape = SubResource("BoxShape3D_bniox")
+
+[node name="tileHigh_teamRed" parent="." instance=ExtResource("4_bijtt")]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileHigh_teamRed"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileHigh_teamRed/StaticBody3D"]
+transform = Transform3D(1.73205, 1, 0, -1, 1.73205, 0, 0, 0, 2, -0.498522, 0.515836, 0)
+shape = SubResource("BoxShape3D_si7kk")
+
+[node name="tileSlopeLowHigh_teamBlue" parent="." instance=ExtResource("5_mgur4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="tileSlopeLowHigh_teamBlue"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="tileSlopeLowHigh_teamBlue/StaticBody3D"]
+transform = Transform3D(1.73205, 1, 0, -1, 1.73205, 0, 0, 0, 2, -0.498522, 0.515836, 0)
+shape = SubResource("BoxShape3D_si7kk")
