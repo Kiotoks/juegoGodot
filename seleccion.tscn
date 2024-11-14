@@ -1,15 +1,22 @@
-[gd_scene load_steps=14 format=3 uid="uid://bhvah4due6fou"]
+[gd_scene load_steps=18 format=3 uid="uid://bhvah4due6fou"]
 
-[ext_resource type="ArrayMesh" uid="uid://bji2xooqjtdb5" path="res://Models/obj/tileLarge_desert.obj" id="1_audxd"]
 [ext_resource type="Theme" uid="uid://df3h0hid3ni41" path="res://Botones.tres" id="1_phim3"]
 [ext_resource type="Script" path="res://scripts/seleccion.gd" id="2_3qn0o"]
-[ext_resource type="ArrayMesh" uid="uid://cpyyfqitgo2b8" path="res://Models/obj/tileLow_desert.obj" id="2_7w1yy"]
-[ext_resource type="ArrayMesh" uid="uid://dlcfy3qiktyle" path="res://Models/obj/tileSlopeLowHigh_desert.obj" id="3_2pvsc"]
-[ext_resource type="ArrayMesh" uid="uid://dhusg3a4o45im" path="res://Models/obj/tree_desert.obj" id="4_b01tk"]
-[ext_resource type="ArrayMesh" uid="uid://c0ph1kgng1m6b" path="res://Models/obj/plantA_desert.obj" id="5_udt4l"]
-[ext_resource type="ArrayMesh" uid="uid://up2ajoxt61e2" path="res://Models/obj/plantB_desert.obj" id="6_n3vn2"]
-[ext_resource type="ArrayMesh" uid="uid://cj5hjbuusa708" path="res://Models/obj/rocksB_desert.obj" id="7_2du1r"]
-[ext_resource type="ArrayMesh" uid="uid://cwsdugrvw2maf" path="res://Models/obj/rocksA_desert.obj" id="8_a84eb"]
+[ext_resource type="PackedScene" uid="uid://cvoi10nu7n3wr" path="res://Models/dae/tileLow_desert.dae" id="4_4xbha"]
+[ext_resource type="PackedScene" uid="uid://d3inwqmj2kddp" path="res://Models/dae/plantA_desert.dae" id="5_4y1m3"]
+[ext_resource type="PackedScene" uid="uid://bjplg4c2la48y" path="res://Models/dae/tileSlopeLowHigh_desert.dae" id="6_uleey"]
+[ext_resource type="PackedScene" uid="uid://bgolxuse0btwo" path="res://Models/dae/rocksB_desert.dae" id="7_khmmu"]
+[ext_resource type="PackedScene" uid="uid://bpkv312784cww" path="res://Models/dae/rocksA_desert.dae" id="8_3up1k"]
+[ext_resource type="PackedScene" uid="uid://bqqr4gwc6gk2j" path="res://Models/dae/plantB_desert.dae" id="9_es6e0"]
+[ext_resource type="PackedScene" uid="uid://cf5j1a355h5bj" path="res://Models/dae/tree_desert.dae" id="10_4247s"]
+[ext_resource type="PackedScene" uid="uid://b700en8jui420" path="res://Models/dae/tileLarge_desert.dae" id="10_jqgji"]
+[ext_resource type="PackedScene" uid="uid://dyasi1h760k1k" path="res://Models/dae/arrow_teamBlue.dae" id="11_gpuwc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmba5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gcij"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1gsa"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u0gty"]
 sky_top_color = Color(0.0595057, 0.466811, 0.670629, 1)
@@ -44,10 +51,10 @@ script = ExtResource("2_3qn0o")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -260.0
-offset_top = 177.0
-offset_right = 28.0
-offset_bottom = 263.0
+offset_left = -300.0
+offset_top = 127.0
+offset_right = 8.0
+offset_bottom = 288.0
 grow_horizontal = 2
 theme = ExtResource("1_phim3")
 
@@ -60,6 +67,7 @@ text = "Cantidad de jugadores"
 
 [node name="CantJugadores" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jmba5")
 item_count = 3
 popup/item_0/text = "2 Jugadores"
 popup/item_1/text = "3 Jugadores"
@@ -76,6 +84,7 @@ text = "Cantidad de rondas"
 
 [node name="CantRondas" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer2"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4gcij")
 item_count = 5
 popup/item_0/text = "1 ronda"
 popup/item_1/text = "2 rondas"
@@ -89,6 +98,7 @@ popup/item_4/id = 4
 
 [node name="Button" type="Button" parent="Control/CanvasLayer/VboxContainer"]
 layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_a1gsa")
 text = "Aceptar"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -105,67 +115,53 @@ transform = Transform3D(0.170994, -0.029446, 0.984832, 0.0281078, 0.999292, 0.02
 keep_aspect = 0
 fov = 31.2288
 
-[node name="RocksBDesert2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.86872, 0.0325135, 0, -0.0615675, 0.986865, 0, 0, 0, 1.75621, -2.69638, 1.02472, 0.901726)
-mesh = ExtResource("7_2du1r")
-skeleton = NodePath("../TileLargeDesert")
+[node name="tileLow_desert" parent="." instance=ExtResource("4_4xbha")]
+transform = Transform3D(0.869547, 0, -0.493851, 0, 1, 0, 0.493851, 0, 0.869547, -0.763296, 0.675142, -0.954525)
 
-[node name="TileLargeDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.86974, 0, 0, 0, 0.9874, 0, 0, 0, 1.75621, -0.426647, 0, -1.01652)
-mesh = ExtResource("1_audxd")
+[node name="plantA_desert" parent="." instance=ExtResource("5_4y1m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.740845, 0.973694, -0.650165)
 
-[node name="TileLowDesert3" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.7093, 0, -0.704907, 0, 1, 0, 0.704907, 0, 0.7093, 3.44856, 0.14204, -1.70815)
-mesh = ExtResource("2_7w1yy")
-skeleton = NodePath("../TileLowDesert")
+[node name="plantA_desert2" parent="." instance=ExtResource("5_4y1m3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46079, 0.922415, 0.707492)
 
-[node name="TileLowDesert2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.88239, 0, -0.470519, 0, 1, 0, 0.470519, 0, 0.88239, -0.987119, 0.660428, -1.11279)
-mesh = ExtResource("2_7w1yy")
-skeleton = NodePath("../TileLowDesert3")
+[node name="tileLow_desert2" parent="." instance=ExtResource("4_4xbha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7263, 0.0918813, 2.36219)
 
-[node name="TileLowDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.72428, 0.0710199, 2.38438)
-mesh = ExtResource("2_7w1yy")
+[node name="tileLow_desert3" parent="." instance=ExtResource("4_4xbha")]
+transform = Transform3D(0.715473, 0, -0.69864, 0, 1, 0, 0.69864, 0, 0.715473, 3.48391, 0.160998, -1.6993)
 
-[node name="TileSlopeLowHighDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04384, 0, 2.54078)
-mesh = ExtResource("3_2pvsc")
+[node name="tileLow_desert4" parent="." instance=ExtResource("4_4xbha")]
+transform = Transform3D(0.994567, 0, -0.104095, 0, 1, 0, 0.104095, 0, 0.994567, -4.49251, 0.146521, -4.06795)
 
-[node name="TreeDesert2" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.551007, 0, 0.116028, 0, 0.759154, 0, -0.083614, 0, 0.603684, -2.50607, 0.65309, -3.78281)
-mesh = ExtResource("4_b01tk")
-skeleton = NodePath("../TreeDesert")
+[node name="tileSlopeLowHigh_desert" parent="." instance=ExtResource("6_uleey")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04107, 0, 2.51169)
 
-[node name="TreeDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.547136, 0, -0.453071, 0, 0.85557, 0, 0.365902, 0, 0.67748, 0.787907, 0.907705, 2.18077)
-mesh = ExtResource("4_b01tk")
+[node name="rocksB_desert" parent="." instance=ExtResource("7_khmmu")]
+transform = Transform3D(1.19741, 0, 0, 0, 1.14308, 0, 0, 0, 1.17466, -2.85709, 0.921772, 0.738695)
 
-[node name="PlantADesert2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758041, 0.944081, -0.643959)
-mesh = ExtResource("5_udt4l")
-skeleton = NodePath("../PlantADesert")
+[node name="rocksA_desert" parent="." instance=ExtResource("8_3up1k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2267, 0.966841, -4.32969)
 
-[node name="PlantADesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.46277, 0.962325, 0.715277)
-mesh = ExtResource("5_udt4l")
+[node name="rocksB_desert2" parent="." instance=ExtResource("7_khmmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.95332, 0.959587, 1.39195)
 
-[node name="PlantBDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08567, 1.15812, -1.67323)
-mesh = ExtResource("6_n3vn2")
+[node name="plantB_desert" parent="." instance=ExtResource("9_es6e0")]
+transform = Transform3D(1.05396, 0, 0, 0, 1.66982, 0, 0, 0, 1, 4.07115, 1.10683, -1.66312)
 
-[node name="RocksBDesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93866, 0.984699, 1.39701)
-mesh = ExtResource("7_2du1r")
+[node name="tree_desert3" parent="." instance=ExtResource("10_4247s")]
+transform = Transform3D(-0.588355, 0, -0.517679, 0, 0.984293, 0, 0.519329, 0, -0.589892, -5.71571, 0.833454, -3.2782)
 
-[node name="RocksADesert" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.23768, 0.963629, -4.32383)
-mesh = ExtResource("8_a84eb")
+[node name="tree_desert" parent="." instance=ExtResource("10_4247s")]
+transform = Transform3D(0.648224, 0, -0.117309, 0, 0.871349, 0, 0.111502, 0, 0.681986, -3.92366, 1.04818, 0.998208)
 
-[node name="TileLowDesert4" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.995192, 0, -0.0979477, 0, 1, 0, 0.0979477, 0, 0.995192, -4.48318, 0.14204, -4.05762)
-mesh = ExtResource("2_7w1yy")
-skeleton = NodePath("../TileLowDesert")
+[node name="tree_desert2" parent="." instance=ExtResource("10_4247s")]
+transform = Transform3D(0.559116, 0, 0.233961, 0, 1, 0, -0.166626, 0, 0.785055, -2.39185, 0.578865, -4.83096)
+
+[node name="tileLarge_desert" parent="." instance=ExtResource("10_jqgji")]
+transform = Transform3D(1.87, 0, 0, 0, 1.807, 0, 0, 0, 1.87, -0.427, -0.826282, -1.017)
+
+[node name="arrow_teamBlue" parent="." instance=ExtResource("11_gpuwc")]
+transform = Transform3D(1, 0, 0, 0, 0.990095, 0.1404, 0, -0.1404, 0.990095, -4.19003, 1.44564, -3.81777)
 
 [connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer/CantJugadores" to="Control" method="_on_cant_jugadores_item_selected"]
 [connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer2/CantRondas" to="Control" method="_on_cant_rondas_item_selected"]

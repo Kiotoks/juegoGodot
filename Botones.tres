@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://df3h0hid3ni41"]
 
-[ext_resource type="FontFile" uid="uid://ckjrldj6tg6ss" path="res://Models/gltf/RifficFree-Bold.ttf" id="1_ihjkc"]
+[ext_resource type="FontFile" uid="uid://ckjrldj6tg6ss" path="res://RifficFree-Bold.ttf" id="1_ihjkc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dw0b"]
 bg_color = Color(0.348117, 0.597143, 0.835252, 1)

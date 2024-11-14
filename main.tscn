@@ -1,8 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://byhej6jio1gqc"]
+[gd_scene load_steps=11 format=3 uid="uid://byhej6jio1gqc"]
 
 [ext_resource type="Script" path="res://scripts/miniGame.gd" id="1_t7eus"]
-[ext_resource type="Script" path="res://scripts/pivot.gd" id="2_ql7in"]
 [ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://palo.tscn" id="3_0cbyl"]
+[ext_resource type="PackedScene" uid="uid://c8f3uv23n8l7p" path="res://Models/dae/button_teamBlue.dae" id="3_hwo4i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na8b7"]
 sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
@@ -25,10 +25,20 @@ glow_enabled = true
 size = Vector3(54.0399, 12.699, 51.3671)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sub8p"]
-albedo_color = Color(0.447059, 0.290196, 0.152941, 1)
+albedo_color = Color(0.365015, 0.214521, 0.0918629, 1)
+metallic = 0.76
+roughness = 0.18
+ao_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j7nc"]
+albedo_color = Color(0.39469, 0.18136, 0.0858343, 1)
+metallic = 1.0
+roughness = 0.02
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uobgi"]
-albedo_color = Color(0.242708, 0.498875, 2.88785e-07, 1)
+albedo_color = Color(0.327086, 0.655856, 0, 1)
+metallic = 0.68
+roughness = 0.0
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("spawners")]
 script = ExtResource("1_t7eus")
@@ -43,8 +53,6 @@ environment = SubResource("Environment_6afsl")
 
 [node name="Pivot" type="Node3D" parent="."]
 transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, 4.994, 4.816, 4.697)
-script = ExtResource("2_ql7in")
-follow_speed = 20.0
 
 [node name="Camera3D" type="Camera3D" parent="Pivot"]
 transform = Transform3D(-4.37114e-08, -0.0279216, 0.999611, 1.77636e-15, 0.999611, 0.0279216, -1, 1.22049e-09, -4.36943e-08, 17.9403, 1.62171, 0)
@@ -61,16 +69,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26706, -12.7285, 4.26243)
 shape = SubResource("BoxShape3D_7bfin")
 
 [node name="spawner4" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50525, 1.16289, 1.13585)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1931, 1.16289, 6.07445)
 
 [node name="spawner2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16289, 0.105519)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.83174, 0.0831006, 0.105519)
 
 [node name="spawner3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.21902, 1.16289, 5.59156)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.13539, 1.16289, 8.99927)
 
 [node name="spawner" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.581444, 5.40876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.581444, 3.68968)
 
 [node name="centro" type="CSGCylinder3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2.53302, 0, 0, 0, 2, -5.5, 1.1572, 4.5)
@@ -78,18 +86,29 @@ material_override = SubResource("StandardMaterial3D_sub8p")
 use_collision = true
 sides = 32
 
-[node name="base" type="CSGCylinder3D" parent="."]
-transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -5.75581, -1.04887, 4.69723)
+[node name="base2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 1, 0, 0, 0, 15, -5.756, -1.92625, 4.697)
 use_collision = true
 sides = 32
+material = SubResource("StandardMaterial3D_0j7nc")
+
+[node name="base" type="CSGCylinder3D" parent="."]
+transform = Transform3D(15, 0, 0, 0, 0.3, 0, 0, 0, 15, -5.75581, -0.639518, 4.69723)
+use_collision = true
+sides = 64
 material = SubResource("StandardMaterial3D_uobgi")
 
 [node name="palo" parent="." instance=ExtResource("3_0cbyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51122, 0.904959, 4.49925)
 rotation_speed = 1.7
+up_force = 0.0
 
 [node name="palo2" parent="." instance=ExtResource("3_0cbyl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 2.65621, 4.5)
 rotation_speed = 2.0
+up_force = 0.0
+
+[node name="button_teamBlue" parent="." instance=ExtResource("3_hwo4i")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.5137, 3.69022, 4.47971)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

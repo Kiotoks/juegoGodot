@@ -10,8 +10,6 @@ var cantGanados = []
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	charOpcs = load_json_file(data_file_path)
-	for i in range(cantJugadores):
-		cantGanados.append(0)
 		
 	pass # Replace with function body.
 
@@ -32,4 +30,11 @@ func siguiente_minijuego():
 	#aca tendria que hacerse el chequeo de la queue de minijuegos y ver el siguiente pero por ahora se recarga la escena
 	get_tree().change_scene_to_file("res://main.tscn")
 	pass
+	
+func iniciar_minijuegos(cantJ, cantR):
+	cantJugadores = cantJ
+	cantRondas = cantR
+	for i in range(cantJugadores):
+		cantGanados.append(0)
+	siguiente_minijuego()
 # Called every frame. 'delta' is the elapsed time since the previous frame.

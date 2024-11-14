@@ -23,7 +23,9 @@ func _on_area_3d_body_entered(body) -> void:
 				jugadores.erase(numeroJugador)
 				if len(jugadores) == 1:
 					terminar_minijuego()
+				return
 		body.queue_free()
+		
 	pass # Replace with function body.
 
 func spawnear_jugadores():

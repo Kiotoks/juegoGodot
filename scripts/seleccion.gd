@@ -31,24 +31,10 @@ func _on_jugadores_option_selected(index):
 
 func _on_rondas_option_selected(index):
 	print("Índice seleccionado para rondas:", index)  # Depuración: Imprime el índice de selección
-	match index:
-		0:
-			temp_cant_rondas = 1
-		1:
-			temp_cant_rondas = 2
-		2:
-			temp_cant_rondas = 3
-		3:
-			temp_cant_rondas = 4
-		4:
-			temp_cant_rondas = 5
-		_:
-			print("Índice fuera de rango para rondas: ", index)
+	temp_cant_rondas = index + 1
 	print("Cantidad de rondas seleccionada temporalmente:", temp_cant_rondas)
 
 func _on_aceptar_pressed():
 	# Asignar los valores temporales a StaticData solo al presionar "Aceptar"
-	StaticData.cantJugadores = temp_cant_jugadores
-	StaticData.cantRondas = temp_cant_rondas
 	print("Datos guardados: Jugadores =", StaticData.cantJugadores, ", Rondas =", StaticData.cantRondas)
-	get_tree().change_scene_to_file("res://controlador_juego.tscn")
+	StaticData.iniciar_minijuegos(temp_cant_jugadores, temp_cant_rondas)
