@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2cw3twy3o784"]
+[gd_scene load_steps=12 format=3 uid="uid://d2cw3twy3o784"]
 
 [ext_resource type="Script" path="res://scripts/carrera.gd" id="1_monep"]
 [ext_resource type="MeshLibrary" uid="uid://dmgejyibfvdbl" path="res://grid/grilla.tres" id="2_ntusv"]
 [ext_resource type="Script" path="res://scripts/pivotCarrera.gd" id="3_vhv1t"]
 [ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://palo.tscn" id="4_buyc7"]
+[ext_resource type="PackedScene" uid="uid://jpfvvaw8jbwu" path="res://confeti.tscn" id="5_87fw1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d43r0"]
 sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
@@ -23,8 +24,14 @@ tonemap_mode = 2
 tonemap_exposure = 0.67
 glow_enabled = true
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_vl67i"]
-size = Vector3(2.93731, 34.3416, 37.8896)
+[sub_resource type="BoxShape3D" id="BoxShape3D_e5vcs"]
+size = Vector3(4, 30, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a0i8j"]
+size = Vector3(200, 5, 200)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gq4wa"]
+size = Vector3(10, 10, 0.5)
 
 [node name="Carrera" type="Node3D" node_paths=PackedStringArray("spawners")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34343, 0, 0)
@@ -66,16 +73,29 @@ current = true
 fov = 31.5
 size = 18.308
 script = ExtResource("3_vhv1t")
-limite_velocidad = 3.0
+velocidad_inicial = 1.0
+limite_velocidad = 1.0
 
-[node name="ZonaMuerte" type="Area3D" parent="Pivot/Camera3D"]
-transform = Transform3D(1, -1.77636e-15, 0, -4.44089e-16, 0.85264, -0.522498, 3.55271e-15, 0.522499, 0.85264, -5.69871, 1.51672, -33.643)
+[node name="zona_muerte" type="Area3D" parent="Pivot/Camera3D"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/ZonaMuerte"]
-transform = Transform3D(0.999976, 6.64357e-13, 0, -7.61702e-12, 1, 8.25678e-16, 4.95464e-07, 8.25704e-16, 1, -14.2186, -0.610686, 4.48067)
-shape = SubResource("BoxShape3D_vl67i")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pivot/Camera3D/zona_muerte"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
+shape = SubResource("BoxShape3D_e5vcs")
 
 [node name="palo" parent="." instance=ExtResource("4_buyc7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969182, -1.07126, -56.7886)
 
-[connection signal="body_entered" from="Pivot/Camera3D/ZonaMuerte" to="." method="_on_zona_muerte_body_entered"]
+[node name="zona_vacio" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -24.2227, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zona_vacio"]
+shape = SubResource("BoxShape3D_a0i8j")
+
+[node name="zona_meta" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13.968)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="zona_meta"]
+shape = SubResource("BoxShape3D_gq4wa")
+
+[node name="confeti" parent="." instance=ExtResource("5_87fw1")]
+transform = Transform3D(0.0167019, -1.74009e-05, 0.999861, 1.64189e-06, 1, 1.73759e-05, -0.999861, 1.35145e-06, 0.0167019, 0.47826, 3.96001, -11.6831)
