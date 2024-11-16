@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://d2cw3twy3o784"]
 
-[ext_resource type="Script" path="res://scripts/carrera.gd" id="1_monep"]
-[ext_resource type="MeshLibrary" uid="uid://dmgejyibfvdbl" path="res://grid/grilla.tres" id="2_ntusv"]
-[ext_resource type="Script" path="res://scripts/pivotCarrera.gd" id="3_vhv1t"]
-[ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://palo.tscn" id="4_buyc7"]
-[ext_resource type="PackedScene" uid="uid://jpfvvaw8jbwu" path="res://confeti.tscn" id="5_87fw1"]
+[ext_resource type="Script" path="res://scripts/carrera.gd" id="1_klcjr"]
+[ext_resource type="MeshLibrary" uid="uid://dmgejyibfvdbl" path="res://grid/grilla.tres" id="2_5w8gg"]
+[ext_resource type="Script" path="res://scripts/pivotCarrera.gd" id="3_mr78p"]
+[ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://assets/palo.tscn" id="4_3dv3i"]
+[ext_resource type="PackedScene" uid="uid://jpfvvaw8jbwu" path="res://assets/confeti.tscn" id="5_rj4o5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_d43r0"]
 sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
@@ -35,7 +35,7 @@ size = Vector3(10, 10, 0.5)
 
 [node name="Carrera" type="Node3D" node_paths=PackedStringArray("spawners")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34343, 0, 0)
-script = ExtResource("1_monep")
+script = ExtResource("1_klcjr")
 spawners = [NodePath("spawner"), NodePath("spawner2"), NodePath("spawner3"), NodePath("spawner4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -46,7 +46,7 @@ shadow_enabled = true
 environment = SubResource("Environment_nnhhw")
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource("2_ntusv")
+mesh_library = ExtResource("2_5w8gg")
 data = {
 "cells": PackedInt32Array(-1, 0, 16, -65536, 0, 16, -65535, 0, 16, -2, 0, 16, -65535, 1, 16, -65536, 1, 16, -1, 1, 16, -2, 1, 16, -65536, 65535, 17, -1, 65535, 17, -2, 65535, 17, -2, 65533, 17, -3, 0, 1048592, -3, 1, 1048592, 65534, 65532, 1441830, 65534, 65531, 1441810, 65534, 65530, 1441810, 65535, 65525, 1441813, 65535, 65528, 1441819, 65534, 65528, 1441819, 0, 65528, 1441819, 131071, 65522, 655376, 131070, 65521, 16, 65536, 65521, 16, 131069, 65519, 16, 131068, 65518, 16, 131068, 65517, 16, 131068, 65516, 16, 131069, 65514, 16, 131071, 65514, 16, 0, 65524, 1441828, 65535, 65524, 1441828, 65534, 65524, 1441828, 131071, 65523, 1441828, 65537, 65519, 1441808, 65538, 65518, 1441808, 65538, 65517, 1441808, 65538, 65516, 1441808, 131071, 65517, 1441808, 131071, 65518, 1441808, 131071, 65516, 1441808, 65537, 65514, 1441808, 196607, 65517, 1441794, 196607, 65514, 1441796, -65537, 65511, 1441814, -131070, 65508, 1441814, -65540, 65508, 1441814, -131071, 65505, 1441819, -65540, 65505, 1441819, -131070, 65505, 1441819, -65539, 65505, 1441819, -65536, 65533, 1441809, 0, 65532, 1441830, -65534, 0, 1441808, -65534, 1, 1441808, -4, 0, 1441808, -4, 1, 1441808, 0, 65531, 1441810, 0, 65530, 1441810, -3, 65498, 1441809, 65533, 65498, 1441800, -3, 65499, 1441839, -2, 65498, 1441809, -1, 65498, 1441809, -65537, 65502, 1441829, -65537, 65504, 1441819, -65538, 65504, 1441819, -131072, 65504, 1441819, -3, 65500, 1441831, -65538, 65502, 1441829, -65537, 65507, 1441816, -65536, 65498, 1441809, -131072, 65502, 1441829, -65535, 65500, 1441831, -65535, 65499, 1441839, -65535, 65498, 1441809, 1, 65498, 1441800)
 }
@@ -72,7 +72,7 @@ transform = Transform3D(-4.37114e-08, -0.0279216, 0.999611, 1.77636e-15, 0.99961
 current = true
 fov = 31.5
 size = 18.308
-script = ExtResource("3_vhv1t")
+script = ExtResource("3_mr78p")
 velocidad_inicial = 1.0
 limite_velocidad = 1.0
 
@@ -82,7 +82,7 @@ limite_velocidad = 1.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, 0)
 shape = SubResource("BoxShape3D_e5vcs")
 
-[node name="palo" parent="." instance=ExtResource("4_buyc7")]
+[node name="palo" parent="." instance=ExtResource("4_3dv3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.969182, -1.07126, -56.7886)
 
 [node name="zona_vacio" type="Area3D" parent="."]
@@ -97,5 +97,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -13.968)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="zona_meta"]
 shape = SubResource("BoxShape3D_gq4wa")
 
-[node name="confeti" parent="." instance=ExtResource("5_87fw1")]
+[node name="confeti" parent="." instance=ExtResource("5_rj4o5")]
 transform = Transform3D(0.0167019, -1.74009e-05, 0.999861, 1.64189e-06, 1, 1.73759e-05, -0.999861, 1.35145e-06, 0.0167019, 0.47826, 3.96001, -11.6831)

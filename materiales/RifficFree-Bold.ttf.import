@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ckjrldj6tg6ss"
-path="res://.godot/imported/RifficFree-Bold.ttf-33d6d01e636df9f24fc7a0222c724ab2.fontdata"
+path="res://.godot/imported/RifficFree-Bold.ttf-da2d122377d7ff90c62b6746cd106d77.fontdata"
 
 [deps]
 
-source_file="res://RifficFree-Bold.ttf"
-dest_files=["res://.godot/imported/RifficFree-Bold.ttf-33d6d01e636df9f24fc7a0222c724ab2.fontdata"]
+source_file="res://materiales/RifficFree-Bold.ttf"
+dest_files=["res://.godot/imported/RifficFree-Bold.ttf-da2d122377d7ff90c62b6746cd106d77.fontdata"]
 
 [params]
 

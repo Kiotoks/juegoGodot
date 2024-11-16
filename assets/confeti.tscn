@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://jpfvvaw8jbwu"]
 
-[ext_resource type="Script" path="res://confeti.gd" id="1_3hyb6"]
+[ext_resource type="Script" path="res://scripts/confeti.gd" id="1_3hyb6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uaugd"]
 albedo_color = Color(5.67943e-06, 0.744625, 0.361832, 1)

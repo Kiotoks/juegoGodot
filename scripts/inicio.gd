@@ -7,7 +7,7 @@ func _ready():
 
 func _on_boton_jugar_pressed():
 	print("Iniciar juego")
-	get_tree().change_scene_to_file("res://seleccion.tscn")
+	get_tree().change_scene_to_file("res://scenes/seleccion.tscn")
 
 func _on_boton_opciones_pressed():
 	print("Abrir opciones")

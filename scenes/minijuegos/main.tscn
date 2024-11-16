@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://byhej6jio1gqc"]
 
 [ext_resource type="Script" path="res://scripts/miniGame.gd" id="1_t7eus"]
-[ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://palo.tscn" id="3_0cbyl"]
+[ext_resource type="PackedScene" uid="uid://dlfowopk7iig2" path="res://assets/palo.tscn" id="3_0cbyl"]
 [ext_resource type="PackedScene" uid="uid://c8f3uv23n8l7p" path="res://Models/dae/button_teamBlue.dae" id="3_hwo4i"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_na8b7"]
@@ -42,7 +42,7 @@ roughness = 0.0
 
 [node name="Main" type="Node3D" node_paths=PackedStringArray("spawners")]
 script = ExtResource("1_t7eus")
-spawners = [NodePath("spawner"), NodePath("spawner3"), NodePath("spawner2"), NodePath("spawner4")]
+spawners = [NodePath("spawner"), NodePath("spawner2"), NodePath("spawner3"), NodePath("spawner4")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

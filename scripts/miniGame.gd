@@ -29,7 +29,7 @@ func _on_area_3d_body_entered(body) -> void:
 	pass # Replace with function body.
 
 func spawnear_jugadores():
-	var escenaJugador = preload("res://player.tscn")
+	var escenaJugador = preload("res://assets/player.tscn")
 	for i in range(cantJugadores):
 		var jugador = escenaJugador.instantiate()
 		jugador.set_numero_jugador(i)

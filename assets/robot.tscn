@@ -1,12 +1,12 @@
 [gd_scene load_steps=31 format=4 uid="uid://bk2qi673exbja"]
 
-[ext_resource type="Script" path="res://scripts/coloresJugadores.gd" id="1_lsng6"]
-[ext_resource type="Texture2D" uid="uid://37xdrfcsgf8j" path="res://materiales/3DGodotRobot_GodotPalette.png" id="2_e7nc6"]
+[ext_resource type="Script" path="res://scripts/coloresJugadores.gd" id="1_x3xt4"]
+[ext_resource type="Texture2D" uid="uid://37xdrfcsgf8j" path="res://materiales/3DGodotRobot_GodotPalette.png" id="2_n63iv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3ntwp"]
 resource_name = "Material"
 cull_mode = 2
-albedo_texture = ExtResource("2_e7nc6")
+albedo_texture = ExtResource("2_n63iv")
 roughness = 0.4
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_vt21l"]
@@ -4638,7 +4638,7 @@ _data = {
 }
 
 [node name="3DGodotRobot" type="Node3D"]
-script = ExtResource("1_lsng6")
+script = ExtResource("1_x3xt4")
 
 [node name="RobotArmature" type="Node3D" parent="."]
 transform = Transform3D(0.578472, 0, 0, 0, 0.578472, 0, 0, 0, 0.578472, 0, 0, 0)

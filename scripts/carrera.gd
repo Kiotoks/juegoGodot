@@ -35,7 +35,7 @@ func _process(delta: float) -> void:
 	mover_zona_muerte()
 
 func spawnear_jugadores():
-	var escenaJugador = preload("res://player.tscn")
+	var escenaJugador = preload("res://assets/player.tscn")
 	for i in range(cantJugadores):
 		var jugador = escenaJugador.instantiate()
 		jugador.set_numero_jugador(i)
