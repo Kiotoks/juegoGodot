@@ -28,7 +28,8 @@ func minijuego_terminado(ganador: int):
 
 func siguiente_minijuego():
 	#aca tendria que hacerse el chequeo de la queue de minijuegos y ver el siguiente pero por ahora se recarga la escena
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_file("res://carrera.tscn")
+
 	pass
 	
 func iniciar_minijuegos(cantJ, cantR):
