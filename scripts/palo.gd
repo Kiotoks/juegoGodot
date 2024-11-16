@@ -20,7 +20,6 @@ func _ready():
 
 # Función que se ejecuta cuando el temporizador llega a 0
 func _on_Timer_timeout():
-	print("hola")
 	can_rotate = true  # Permite que el palo comience a rotar después del retraso
 
 func _integrate_forces(state):

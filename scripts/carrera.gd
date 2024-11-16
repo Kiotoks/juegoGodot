@@ -9,10 +9,6 @@ func _ready() -> void:
 	spawnear_jugadores()
 	for i in range(cantJugadores):
 		jugadores.append(i)
-	# Conectar la señal del Area3D
-	var zona_muerte = get_node("Pivot/Camera3D/ZonaMuerte")
-	if zona_muerte:
-		zona_muerte.connect("body_entered", Callable(self, "_on_area_3d_body_entered"))
 
 func spawnear_jugadores():
 	var escenaJugador = preload("res://player.tscn")
@@ -28,11 +24,6 @@ func _process(delta: float) -> void:
 		if jugador is CharacterBody3D and jugador.transform.origin.y < y_min:
 			eliminar_jugador(jugador)
 
-# Manejar cuando un jugador entra en el Area3D (zona de muerte)
-func _on_area_3d_body_entered(body) -> void:
-	if body is CharacterBody3D:
-		eliminar_jugador(body)
-
 # Función para eliminar a un jugador
 func eliminar_jugador(jugador):
 	var numeroJugador = jugador.numero_de_jugador
@@ -46,3 +37,9 @@ func eliminar_jugador(jugador):
 func terminar_minijuego():
 	print("Gano el jugador", jugadores[0])
 	StaticData.minijuego_terminado(jugadores[0])
+
+
+func _on_zona_muerte_body_entered(body: Node3D) -> void:
+	print("afuera")
+	if body is CharacterBody3D:
+		eliminar_jugador(body)
