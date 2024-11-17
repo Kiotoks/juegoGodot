@@ -55,7 +55,7 @@ func elegirOwner():
 func resetear_bomba():
 	bomba.transform = Transform3D()
 	bomba.linear_velocity = Vector3(0,0,0)
-	bomba.transform.origin.x = 4
+	bomba.transform.origin.x = 2
 	bomba.transform.origin.z = 2
 	bomba.transform.origin.y = 1.7
 	bomba.collision_mask = 1
