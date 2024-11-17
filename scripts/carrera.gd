@@ -60,8 +60,9 @@ func _on_zona_muerte_body_entered(body: Node3D):
 func _on_zona_meta_body_entered(body: Node3D):
 	if body is CharacterBody3D:
 		confeti.activar()
-		# El primer jugador que llegue a la meta gana
 		print("¡Jugador", body.numero_de_jugador, "ha llegado a la meta!")
+		# El primer jugador que llegue a la meta gana
+		await get_tree().create_timer(3).timeout
 		terminar_minijuego_con_ganador(body)
 
 func eliminar_jugador(jugador: CharacterBody3D):
