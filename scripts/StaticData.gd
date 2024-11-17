@@ -3,7 +3,7 @@ extends Node
 var charOpcs = {}
 var data_file_path = "res://data/personaje.json"
 
-var cantJugadores = 2
+var cantJugadores = 4
 var cantRondas= 2
 var cantGanados = []
 
