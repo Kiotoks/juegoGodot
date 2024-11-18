@@ -18,6 +18,7 @@ transform = Transform3D(0.994561, 0, 0, 0, 0.994561, 0, 0, 0, 0.994561, 0, 1, 0)
 script = ExtResource("1_6e6mx")
 area_shape = NodePath("Area3D")
 move_speed = 4.0
+force_strength = 7.0
 raycast = NodePath("RayCast3D")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]

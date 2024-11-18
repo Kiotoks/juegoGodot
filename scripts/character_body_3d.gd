@@ -74,12 +74,13 @@ func _process(delta: float) -> void:
 		var target_rotation_y = atan2(-input_direction.x, -input_direction.z)
 		rotation.y = lerp_angle(rotation.y, target_rotation_y, rotation_speed * delta)
 	else:
-		velocity *= Vector3(0.9, 1, 0.9)
 		if not en_ataque and is_on_floor():
 			animacion.play("Idle")
 	
 	if not is_on_floor() and not en_ataque:
 		animacion.play("Jump")
+	else:
+		velocity *= Vector3(0.9, 1, 0.9)
 	
 	move_and_slide()
 	
