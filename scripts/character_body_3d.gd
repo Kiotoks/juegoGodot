@@ -91,8 +91,13 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 	# Aplica fuerza al personaje en frente cuando se toca la tecla de acción
-	
-	if (Input.is_action_just_pressed(teclaAccion) or  Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X)) and not en_ataque:
+	if numero_de_jugador < 2:
+		if Input.is_action_just_pressed(teclaAccion)  and not en_ataque:
+			en_ataque = true
+			animacion.play("Attack1")
+			aplicar_fuerza_a_personaje_en_frente()
+
+	if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X) and not en_ataque:
 		en_ataque = true
 		animacion.play("Attack1")
 		aplicar_fuerza_a_personaje_en_frente()
