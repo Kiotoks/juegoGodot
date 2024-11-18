@@ -3,7 +3,9 @@ extends Node
 var charOpcs = {}
 var data_file_path = "res://data/personaje.json"
 var carpetaMinijuegos = "res://scenes/minijuegos/"
-var minijuegos = DirAccess.get_files_at(carpetaMinijuegos)
+
+
+var minijuegos = ["res://scenes/minijuegos/carrera.tscn", "res://scenes/minijuegos/dinosaurio.tscn", "res://scenes/minijuegos/main.tscn", "res://scenes/minijuegos/memotest.tscn", "res://scenes/minijuegos/monedas.tscn"]
 var cantJugadores = 4
 var listaMinijuegos = []
 var cantRondas= 2
@@ -13,8 +15,6 @@ var ronda = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	charOpcs = load_json_file(data_file_path)
-	for i in range(len(minijuegos)):
-		minijuegos[i] = carpetaMinijuegos + minijuegos[i]
 	print(minijuegos)
 
 func load_json_file (path :String):
