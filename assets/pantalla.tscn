@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://fi4xerql5gu2"]
+
+[ext_resource type="Script" path="res://scripts/pantalla.gd" id="1_1mgrc"]
+[ext_resource type="Material" uid="uid://c2oregre2d2il" path="res://materiales/bombanegra.tres" id="2_vqryb"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_3d685"]
+material = ExtResource("2_vqryb")
+size = Vector2(5, 5)
+
+[node name="pantalla" type="Node3D"]
+script = ExtResource("1_1mgrc")
+
+[node name="pantalla" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.0108314, 1.00417, 0.00102329)
+mesh = SubResource("QuadMesh_3d685")
