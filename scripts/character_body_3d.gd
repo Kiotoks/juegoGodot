@@ -46,7 +46,7 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if numero_de_jugador <3:
+	if numero_de_jugador < 2:
 		if Input.is_action_just_pressed(teclaSaltar) and is_on_floor():
 			velocity.y = JUMP_VELOCITY
 		# Detecta las teclas de movimiento para determinar la dirección
