@@ -10,11 +10,6 @@ func _ready() -> void:
 		jugadores.append(i)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_area_3d_body_entered(body) -> void:
 	if body is CharacterBody3D:
 		var numeroJugador = body.numero_de_jugador

@@ -46,19 +46,25 @@ func _process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Salto
-	if Input.is_action_just_pressed(teclaSaltar) and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	if numero_de_jugador <3:
+		if Input.is_action_just_pressed(teclaSaltar) and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		# Detecta las teclas de movimiento para determinar la dirección
+		if Input.is_action_pressed(teclaAdelante):
+			input_direction.x -= 1
+		if Input.is_action_pressed(teclaAtras):
+			input_direction.x += 1
+		if Input.is_action_pressed(teclaIzquierda):
+			input_direction.z += 1
+		if Input.is_action_pressed(teclaDerecha):
+			input_direction.z -= 1
 	
-	# Detecta las teclas de movimiento para determinar la dirección
-	if Input.is_action_pressed(teclaAdelante):
-		input_direction.x -= 1
-	if Input.is_action_pressed(teclaAtras):
-		input_direction.x += 1
-	if Input.is_action_pressed(teclaIzquierda):
-		input_direction.z += 1
-	if Input.is_action_pressed(teclaDerecha):
-		input_direction.z -= 1
+	if Input.get_joy_name(numero_de_jugador):
+		if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_A) and is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		input_direction.x = Input.get_joy_axis(numero_de_jugador, JOY_AXIS_LEFT_Y)
+		input_direction.z = -Input.get_joy_axis(numero_de_jugador,JOY_AXIS_LEFT_X)
+	
 	
 	 # Mantener solo la componente vertical
 
@@ -85,7 +91,8 @@ func _process(delta: float) -> void:
 	move_and_slide()
 	
 	# Aplica fuerza al personaje en frente cuando se toca la tecla de acción
-	if Input.is_action_just_pressed(teclaAccion) and not en_ataque:
+	
+	if (Input.is_action_just_pressed(teclaAccion) or  Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X)) and not en_ataque:
 		en_ataque = true
 		animacion.play("Attack1")
 		aplicar_fuerza_a_personaje_en_frente()
