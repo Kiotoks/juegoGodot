@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuxef4f3wnvj4"]
+
+[ext_resource type="Script" path="res://scripts/obstaculo.gd" id="1_l4li8"]
+[ext_resource type="PackedScene" uid="uid://7v7dvkwb5eq2" path="res://Models/dae/spikeRoller.dae" id="2_eb1nk"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jyhx6"]
+height = 2.10101
+radius = 0.856196
+
+[node name="obstaculo" type="Node3D"]
+script = ExtResource("1_l4li8")
+
+[node name="spikeRoller" parent="." instance=ExtResource("2_eb1nk")]
+
+[node name="Area3D" type="Area3D" parent="spikeRoller"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="spikeRoller/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01193, 0)
+shape = SubResource("CylinderShape3D_jyhx6")
+
+[connection signal="body_entered" from="spikeRoller/Area3D" to="." method="_on_area_3d_body_entered"]

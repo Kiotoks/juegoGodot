@@ -1,0 +1,80 @@
+[gd_scene load_steps=7 format=3 uid="uid://bahx65sfynioh"]
+
+[ext_resource type="Script" path="res://scripts/dinosaurio.gd" id="1_jnk5k"]
+[ext_resource type="PackedScene" uid="uid://blj4gfn4dfj3k" path="res://assets/spawner_obstaculo.tscn" id="2_m4gxh"]
+[ext_resource type="PackedScene" uid="uid://d1x57hk5gd5uy" path="res://Models/dae/tileLarge_teamBlue.dae" id="3_33mie"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t5qow"]
+sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
+sky_horizon_color = Color(0.492674, 0.695581, 0.729119, 1)
+sky_curve = 0.139955
+ground_bottom_color = Color(0.341608, 0.620276, 0.843333, 1)
+ground_horizon_color = Color(0.494118, 0.694118, 0.729412, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_im51n"]
+sky_material = SubResource("ProceduralSkyMaterial_t5qow")
+
+[sub_resource type="Environment" id="Environment_3kuuu"]
+background_mode = 2
+sky = SubResource("Sky_im51n")
+tonemap_mode = 2
+tonemap_exposure = 0.67
+glow_enabled = true
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("spawners")]
+script = ExtResource("1_jnk5k")
+spawners = [NodePath("spawnersJugadores/Node3D"), NodePath("spawnersJugadores/Node3D2"), NodePath("spawnersJugadores/Node3D3"), NodePath("spawnersJugadores/Node3D4")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(5.261, 0, 0, 0, 1, 0, 0, 0, 16.1787, 2.6305, -3.4783, 0)
+use_collision = true
+size = Vector3(2, 1, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.34202, 0.939693, 0, 0.939693, 0.34202, -1, 1.49502e-08, -4.10753e-08, 12.0952, 2.87135, -0.164869)
+fov = 70.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3kuuu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.739081, -0.457937, 0.494017, 0.62139, -0.18035, 0.762462, -0.260064, 0.870498, 0.417851, 0, 0, 0)
+shadow_enabled = true
+
+[node name="spawnersJugadores" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="spawnersJugadores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28552, -2.47074, 6.14895)
+
+[node name="Node3D2" type="Node3D" parent="spawnersJugadores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, 3)
+
+[node name="Node3D3" type="Node3D" parent="spawnersJugadores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -3)
+
+[node name="Node3D4" type="Node3D" parent="spawnersJugadores"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -6)
+
+[node name="tileLarge_teamBlue" parent="." instance=ExtResource("3_33mie")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3, 0)
+
+[node name="spawnersObstaculos" type="Node3D" parent="."]
+
+[node name="spawnerObstaculo" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, 0)
+
+[node name="spawnerObstaculo2" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, 2)
+
+[node name="spawnerObstaculo3" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, 4)
+
+[node name="spawnerObstaculo4" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, 5)
+
+[node name="spawnerObstaculo5" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, -4)
+
+[node name="spawnerObstaculo6" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.86571, -6)
