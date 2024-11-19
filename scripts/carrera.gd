@@ -39,6 +39,7 @@ func spawnear_jugadores():
 	for i in range(cantJugadores):
 		var jugador = escenaJugador.instantiate()
 		jugador.set_numero_jugador(i)
+		jugador.global_transform.origin.y = spawners[i].global_transform.origin.y
 		jugador.set_coords(spawners[i].global_transform.origin.x, spawners[i].global_transform.origin.z)
 		add_child(jugador)
 

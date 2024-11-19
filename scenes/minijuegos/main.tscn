@@ -65,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1)
 visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26706, -12.7285, 4.26243)
+transform = Transform3D(27.444, 0, 0, 0, 1, 0, 0, 0, 5.97411, -8.26706, -12.7285, 4.26243)
 shape = SubResource("BoxShape3D_7bfin")
 
 [node name="spawner4" type="Node3D" parent="."]
@@ -100,13 +100,16 @@ material = SubResource("StandardMaterial3D_uobgi")
 
 [node name="palo" parent="." instance=ExtResource("3_0cbyl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.51122, 0.904959, 4.49925)
-rotation_speed = 1.7
+rotation_speed = 2.1
 up_force = 0.0
+delay_time = 0.0
 
 [node name="palo2" parent="." instance=ExtResource("3_0cbyl")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.5, 2.65621, 4.5)
-rotation_speed = 2.0
+rotation_speed = 2.5
+push_force = 35.0
 up_force = 0.0
+delay_time = 0.0
 
 [node name="button_teamBlue" parent="." instance=ExtResource("3_hwo4i")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, -5.5137, 3.69022, 4.47971)

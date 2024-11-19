@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceocfd4v6vqt"]
+
+[ext_resource type="Script" path="res://scripts/pj_clicker.gd" id="1_mxb7c"]
+[ext_resource type="PackedScene" uid="uid://bgolxuse0btwo" path="res://Models/dae/rocksB_desert.dae" id="2_3h6qb"]
+[ext_resource type="PackedScene" uid="uid://bk2qi673exbja" path="res://assets/robot.tscn" id="3_evdst"]
+
+[node name="pjClicker" type="Node3D"]
+script = ExtResource("1_mxb7c")
+
+[node name="rocksB_desert" parent="." instance=ExtResource("2_3h6qb")]
+transform = Transform3D(2, 0, 0, 0, 2.5, 0, 0, 0, 2, 0, -0.128372, 0)
+
+[node name="3DGodotRobot" parent="." instance=ExtResource("3_evdst")]
+transform = Transform3D(-0.998761, 0, -0.0497562, 0, 1, 0, 0.0497562, 0, -0.998761, 0, 0, 1.41846)

@@ -15,12 +15,12 @@ ground_bottom_color = Color(0.341608, 0.620276, 0.843333, 1)
 ground_horizon_color = Color(0.494118, 0.694118, 0.729412, 1)
 sun_angle_max = 0.0
 
-[sub_resource type="Sky" id="Sky_atv1v"]
+[sub_resource type="Sky" id="Sky_7hmu5"]
 sky_material = SubResource("ProceduralSkyMaterial_na8b7")
 
 [sub_resource type="Environment" id="Environment_6afsl"]
 background_mode = 2
-sky = SubResource("Sky_atv1v")
+sky = SubResource("Sky_7hmu5")
 tonemap_mode = 2
 tonemap_exposure = 0.67
 glow_enabled = true
@@ -165,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.7, 2)
 transform = Transform3D(0.00321129, 0, 0.999995, 0, 1, 0, -0.999995, 0, 0.00321129, -4.14881, 1.3306, 5.70662)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 45.0
 one_shot = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]

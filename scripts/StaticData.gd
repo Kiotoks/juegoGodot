@@ -38,7 +38,7 @@ func crearListaMinijuego():
 
 	
 func minijuego_terminado(ganador: int):
-	cantGanados[ganador] += 1
+	cantGanados[ganador] += 1  
 	print("victorias: " + str(cantGanados))
 	siguiente_minijuego()
 

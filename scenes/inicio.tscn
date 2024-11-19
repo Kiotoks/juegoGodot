@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://bbs5ubc5cxla1"]
+[gd_scene load_steps=19 format=3 uid="uid://bbs5ubc5cxla1"]
 
 [ext_resource type="Script" path="res://scripts/inicio.gd" id="1_8nkfe"]
 [ext_resource type="Theme" uid="uid://df3h0hid3ni41" path="res://materiales/Botones.tres" id="1_nw5r3"]
 [ext_resource type="PackedScene" uid="uid://4aaf25exft6f" path="res://Models/dae/tileLarge_forest.dae" id="2_a6gqj"]
 [ext_resource type="PackedScene" uid="uid://dpfcmknnwbaea" path="res://Models/dae/tileMedium_forest.dae" id="3_73hxi"]
+[ext_resource type="FontFile" uid="uid://cpv6a6e5hluvx" path="res://materiales/MickeyMouse_PERSONAL_USE_ONLY.otf" id="3_al8ve"]
 [ext_resource type="PackedScene" uid="uid://cox4txcvnqx53" path="res://Models/dae/tileSmall_forest.dae" id="4_6626p"]
 [ext_resource type="PackedScene" uid="uid://dvikxrdxa2cxp" path="res://Models/dae/tree_forest.dae" id="5_q30lf"]
 [ext_resource type="PackedScene" uid="uid://epf1j00x54eh" path="res://Models/dae/rocksA_forest.dae" id="6_srqht"]
@@ -28,9 +29,16 @@ ambient_light_source = 3
 ambient_light_color = Color(0.994689, 0.901946, 0.430528, 1)
 ambient_light_energy = 7.23
 
+[sub_resource type="LabelSettings" id="LabelSettings_dxf0o"]
+font = ExtResource("3_al8ve")
+font_size = 150
+font_color = Color(0.546493, 0.850713, 0.99423, 1)
+shadow_size = 50
+shadow_color = Color(0.573093, 0.389469, 0.592419, 1)
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l8s5k"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfytk"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_r1cab"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4dr37"]
 
@@ -61,16 +69,26 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -132.0
-offset_top = -94.0
-offset_right = -132.0
-offset_bottom = -94.0
+offset_left = -143.0
+offset_top = -5.0
+offset_right = -143.0
+offset_bottom = -5.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.719, 0.8)
 size_flags_horizontal = 4
 theme = ExtResource("1_nw5r3")
 script = ExtResource("1_8nkfe")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = -570.236
+offset_top = -380.0
+offset_right = 190.764
+offset_bottom = -261.0
+rotation = 0.043476
+text = "Gordot Party!"
+label_settings = SubResource("LabelSettings_dxf0o")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(100, 100)
@@ -99,8 +117,8 @@ layout_mode = 2
 [node name="BotonOpciones" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 70
-theme_override_styles/focus = SubResource("StyleBoxEmpty_sfytk")
-text = "Ajustes"
+theme_override_styles/focus = SubResource("StyleBoxEmpty_r1cab")
+text = "Opciones"
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/VBoxContainer"]
 layout_mode = 2

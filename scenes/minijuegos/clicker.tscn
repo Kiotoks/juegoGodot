@@ -1,0 +1,58 @@
+[gd_scene load_steps=7 format=3 uid="uid://c16njukpsvf83"]
+
+[ext_resource type="Script" path="res://scripts/clicker.gd" id="1_k3a6l"]
+[ext_resource type="MeshLibrary" uid="uid://dmgejyibfvdbl" path="res://grid/grilla.tres" id="2_7x08t"]
+[ext_resource type="PackedScene" uid="uid://ceocfd4v6vqt" path="res://assets/pj_clicker.tscn" id="3_2wptu"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1y4ri"]
+sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
+sky_horizon_color = Color(0.492674, 0.695581, 0.729119, 1)
+sky_curve = 0.139955
+ground_bottom_color = Color(0.341608, 0.620276, 0.843333, 1)
+ground_horizon_color = Color(0.494118, 0.694118, 0.729412, 1)
+sun_angle_max = 0.0
+
+[sub_resource type="Sky" id="Sky_atv1v"]
+sky_material = SubResource("ProceduralSkyMaterial_1y4ri")
+
+[sub_resource type="Environment" id="Environment_0t73i"]
+background_mode = 2
+sky = SubResource("Sky_atv1v")
+tonemap_mode = 2
+tonemap_exposure = 0.67
+glow_enabled = true
+
+[node name="clicker" type="Node3D"]
+script = ExtResource("1_k3a6l")
+
+[node name="spawner" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, -2.532, -7)
+
+[node name="spawner2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -2, -7)
+
+[node name="spawner3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -2, -7)
+
+[node name="spawner4" type="Node3D" parent="."]
+transform = Transform3D(0.438127, 0, 0, 0, 0.438127, 0, 0, 0, 0.438127, 5, -2, -7)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.739081, -0.457937, 0.494017, 0.62139, -0.18035, 0.762462, -0.260064, 0.870498, 0.417851, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0t73i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -3.75, 3, -19)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_7x08t")
+data = {
+"cells": PackedInt32Array(-65537, 65532, 655379, -131070, 65532, 655379, -65540, 65532, 655379, -65543, 65532, 655379)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)
+
+[node name="pjClicker" parent="." instance=ExtResource("3_2wptu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.61808, -1.90476, -7.66712)
