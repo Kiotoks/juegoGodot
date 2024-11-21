@@ -2,6 +2,7 @@ extends Node3D
 @onready var piedra: Node3D = $rocksB_desert
 @onready var robot: Node3D = $"3DGodotRobot"
 @export var numero_de_jugador : int = 0
+var numero_de_mando = 0
 @onready var movimientoJugador = StaticData.charOpcs["teclas"][numero_de_jugador] 
 @onready var teclaAccion= movimientoJugador["tecla_accion"]
 var animacion
@@ -16,6 +17,7 @@ var delay = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animacion = robot.get_node("AnimationPlayer")
+	numero_de_mando = StaticData.controllers[numero_de_jugador]
 	robot.cambiarColor(numero_de_jugador)
 	pass # Replace with function body.
 func festejar():
@@ -35,8 +37,8 @@ func _process(delta: float) -> void:
 	if numero_de_jugador < 2 and not terminado:
 		if Input.is_action_just_pressed(teclaAccion):
 			patear()
-	if Input.get_joy_name(numero_de_jugador) and not terminado:
-		if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X) and levanto:
+	if Input.get_joy_name(numero_de_mando) and not terminado:
+		if Input.is_joy_button_pressed(numero_de_mando, 7) and levanto:
 			patear()
 			levanto = false
 		else:

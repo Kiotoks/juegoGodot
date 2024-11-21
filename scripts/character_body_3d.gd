@@ -5,6 +5,7 @@ const JUMP_VELOCITY = 4.5
 @onready var modelo3D: Node3D = $"3DGodotRobot"
 
 @export var numero_de_jugador = 0 
+@onready var numero_de_mando = StaticData.controllers[numero_de_jugador]
 
 @onready var movimientoJugador = StaticData.charOpcs["teclas"][numero_de_jugador] 
 
@@ -59,11 +60,11 @@ func _process(delta: float) -> void:
 		if Input.is_action_pressed(teclaDerecha):
 			input_direction.z -= 1
 	
-	if Input.get_joy_name(numero_de_jugador):
-		if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_A) and is_on_floor():
+	if Input.get_joy_name(numero_de_mando):
+		if Input.is_joy_button_pressed(numero_de_mando, 4) and is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		input_direction.x = Input.get_joy_axis(numero_de_jugador, JOY_AXIS_LEFT_Y)
-		input_direction.z = -Input.get_joy_axis(numero_de_jugador,JOY_AXIS_LEFT_X)
+		input_direction.x = Input.get_joy_axis(numero_de_mando, JOY_AXIS_LEFT_Y)
+		input_direction.z = -Input.get_joy_axis(numero_de_mando,JOY_AXIS_LEFT_X)
 	
 	
 	 # Mantener solo la componente vertical
@@ -97,7 +98,7 @@ func _process(delta: float) -> void:
 			animacion.play("Attack1")
 			aplicar_fuerza_a_personaje_en_frente()
 
-	if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X) and not en_ataque:
+	if Input.is_joy_button_pressed(numero_de_mando, 7) and not en_ataque:
 		en_ataque = true
 		animacion.play("Attack1")
 		aplicar_fuerza_a_personaje_en_frente()

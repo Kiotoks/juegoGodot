@@ -3,7 +3,7 @@ extends Node
 var charOpcs = {}
 var data_file_path = "res://data/personaje.json"
 var carpetaMinijuegos = "res://scenes/minijuegos/"
-
+var controllers = [2,3,0,1]
 
 var minijuegos = ["res://scenes/minijuegos/carrera.tscn", "res://scenes/minijuegos/dinosaurio.tscn", "res://scenes/minijuegos/main.tscn", "res://scenes/minijuegos/memotest.tscn", "res://scenes/minijuegos/monedas.tscn", "res://scenes/minijuegos/clicker.tscn"]
 var cantJugadores = 4
@@ -13,6 +13,7 @@ var cantGanados = []
 var ronda = 0
 var minijuego = 0
 var modo = 0
+var minijuegoAnt
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	charOpcs = load_json_file(data_file_path)
@@ -36,6 +37,9 @@ func crearListaMinijuego(modo, mini):
 			var m = indices[RandomNumberGenerator.new().randi_range(0, len(indices)-1)]
 			listaMinijuegos.append(m)
 			indices.erase(m)
+		if cantRondas > len(minijuegos):
+			for i in range(cantRondas - len(minijuegos)):
+				listaMinijuegos.append(minijuego_aleatorio())
 	if modo == 2:
 		for i in range(cantRondas):
 			listaMinijuegos.append(mini)
@@ -48,7 +52,11 @@ func minijuego_terminado(ganador: int):
 	siguiente_minijuego()
 
 func minijuego_aleatorio():
-	return minijuegos[RandomNumberGenerator.new().randi_range(0, len(minijuegos)-1)]
+	var m = minijuegos[RandomNumberGenerator.new().randi_range(0, len(minijuegos)-1)]
+	while m == minijuegoAnt:
+		m = minijuegos[RandomNumberGenerator.new().randi_range(0, len(minijuegos)-1)]
+	minijuegoAnt = m
+	return m
 
 func siguiente_minijuego():
 	if modo != 1:

@@ -10,7 +10,7 @@ var cantJugadores = StaticData.cantJugadores
 @onready var spawners = nodoSpawners.get_children()
 var jugadores = []
 
-var cantCorrectas = 3
+var cantCorrectas = 1
 var velocidad = 1
 var cantFrutas = 9
 var frutaElegida
@@ -25,10 +25,8 @@ func _ready() -> void:
 	while len(jugadores) > 1:
 		if rondas == 3:
 			velocidad = 0.7
-			cantCorrectas = 2
 		if rondas == 6:
 			velocidad = 0.5
-			cantCorrectas = 1
 		if rondas == 10:
 			velocidad = 0.2
 		resetearPlataformas()
