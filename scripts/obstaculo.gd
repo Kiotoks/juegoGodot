@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var velocidad = 10
-@export var limite = 20
+@export var limite = 50
 var colision
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

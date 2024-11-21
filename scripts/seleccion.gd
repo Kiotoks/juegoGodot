@@ -2,7 +2,10 @@ extends Control
 
 # Variables temporales para almacenar la selección del usuario
 var temp_cant_jugadores = 2
-var temp_cant_rondas = 2
+var temp_cant_rondas = 1
+var temp_modo_juego = 0
+var temp_minijuego = 0
+@onready var selectorMinijuego: HBoxContainer = $CanvasLayer/VboxContainer/HBoxContainer4
 
 func _ready():
 	# Acceder a los nodos usando rutas relativas a partir de "Control"
@@ -12,11 +15,6 @@ func _ready():
 	else:
 		print("Nodo CantJugadores no encontrado")
 	
-	var cant_rondas = get_node("CanvasLayer/VboxContainer/HBoxContainer2/CantRondas")
-	if cant_rondas:
-		cant_rondas.connect("item_selected", Callable(self, "_on_rondas_option_selected"))
-	else:
-		print("Nodo CantRondas no encontrado")
 	
 	var aceptar_button = get_node("CanvasLayer/VboxContainer/Button")
 	if aceptar_button:
@@ -37,4 +35,21 @@ func _on_rondas_option_selected(index):
 func _on_aceptar_pressed():
 	# Asignar los valores temporales a StaticData solo al presionar "Aceptar"
 	print("Datos guardados: Jugadores =", StaticData.cantJugadores, ", Rondas =", StaticData.cantRondas)
-	StaticData.iniciar_minijuegos(temp_cant_jugadores, temp_cant_rondas)
+	StaticData.iniciar_minijuegos(temp_cant_jugadores, temp_cant_rondas, temp_modo_juego, temp_minijuego)
+
+func _on_modo_de_juego_item_selected(index: int) -> void:
+	temp_modo_juego = index
+	if temp_modo_juego == 2:
+		selectorMinijuego.visible = true
+	else:
+		selectorMinijuego.visible = false
+	pass # Replace with function body.
+
+func _on_minijuego_item_selected(index: int) -> void:
+	temp_minijuego = index
+	pass # Replace with function body.
+
+
+func _on_spin_box_value_changed(value: float) -> void:
+	temp_cant_rondas = value
+	pass # Replace with function body.

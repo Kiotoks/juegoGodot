@@ -1,23 +1,47 @@
 extends Node3D
 @onready var piedra: Node3D = $rocksB_desert
 @onready var robot: Node3D = $"3DGodotRobot"
+@export var numero_de_jugador : int = 0
 @onready var movimientoJugador = StaticData.charOpcs["teclas"][numero_de_jugador] 
 @onready var teclaAccion= movimientoJugador["tecla_accion"]
-@export var numero_de_jugador : int
 var animacion
-var height = 1
+var height = 2.5
+var maxClicks = 50
+var paso = height/(maxClicks)
+var terminado = false
+var levanto = true
+var delay = 0
+
+@onready var confeti: Node3D = $Node3D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if numero_de_jugador < 2:
-		if Input.is_action_just_pressed(teclaAccion):
-			animacion = robot.get_node("AnimationPlayer")
-			animacion.play("Kick")
-			piedra.global_transform.basis.y *= Vector3(1, height, 1)
-			height -= 0.1
-	
+	animacion = robot.get_node("AnimationPlayer")
+	robot.cambiarColor(numero_de_jugador)
 	pass # Replace with function body.
-
-
+func festejar():
+	animacion.play("Hurt")
+	confeti.activar()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+func patear():
+	animacion.play("Kick")
+	piedra.global_transform.basis.y.y = height
+	if height > 0:
+		height -= paso
+		print(height)
+	else:
+		terminado = true
+
 func _process(delta: float) -> void:
-	pass
+	if numero_de_jugador < 2 and not terminado:
+		if Input.is_action_just_pressed(teclaAccion):
+			patear()
+	if Input.get_joy_name(numero_de_jugador) and not terminado:
+		if Input.is_joy_button_pressed(numero_de_jugador, JOY_BUTTON_X) and levanto:
+			patear()
+			levanto = false
+		else:
+			if delay > 0.2:
+				levanto = true
+				delay = 0
+	delay += delta
+	

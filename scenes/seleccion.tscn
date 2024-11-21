@@ -58,6 +58,24 @@ offset_bottom = 288.0
 grow_horizontal = 2
 theme = ExtResource("1_phim3")
 
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/CanvasLayer/VboxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CanvasLayer/VboxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "Modo de juego"
+
+[node name="modoDeJuego" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer3"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jmba5")
+selected = 0
+item_count = 3
+popup/item_0/text = "Rondas limitadas"
+popup/item_1/text = "Rondas para ganar"
+popup/item_1/id = 1
+popup/item_2/text = "Minijuego especifico"
+popup/item_2/id = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/CanvasLayer/VboxContainer"]
 layout_mode = 2
 
@@ -68,12 +86,38 @@ text = "Cantidad de jugadores"
 [node name="CantJugadores" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer"]
 layout_mode = 2
 theme_override_styles/focus = SubResource("StyleBoxEmpty_jmba5")
+selected = 0
 item_count = 3
 popup/item_0/text = "2 Jugadores"
 popup/item_1/text = "3 Jugadores"
 popup/item_1/id = 1
 popup/item_2/text = "4 Jugadores"
 popup/item_2/id = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Control/CanvasLayer/VboxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/CanvasLayer/VboxContainer/HBoxContainer4"]
+layout_mode = 2
+text = "Minijuego"
+
+[node name="minijuego" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer4"]
+layout_mode = 2
+theme_override_styles/focus = SubResource("StyleBoxEmpty_4gcij")
+selected = 0
+item_count = 6
+popup/item_0/text = "Carrera"
+popup/item_1/text = "Esquivar obstaculos"
+popup/item_1/id = 1
+popup/item_2/text = "Reloj"
+popup/item_2/id = 2
+popup/item_3/text = "Memo test"
+popup/item_3/id = 3
+popup/item_4/text = "Papa caliente"
+popup/item_4/id = 4
+popup/item_5/text = "Destruir la piedra"
+popup/item_5/id = 5
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="Control/CanvasLayer/VboxContainer"]
 layout_mode = 2
@@ -82,19 +126,10 @@ layout_mode = 2
 layout_mode = 2
 text = "Cantidad de rondas"
 
-[node name="CantRondas" type="OptionButton" parent="Control/CanvasLayer/VboxContainer/HBoxContainer2"]
+[node name="SpinBox" type="SpinBox" parent="Control/CanvasLayer/VboxContainer/HBoxContainer2"]
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxEmpty_4gcij")
-item_count = 5
-popup/item_0/text = "1 ronda"
-popup/item_1/text = "2 rondas"
-popup/item_1/id = 1
-popup/item_2/text = "3 rondas"
-popup/item_2/id = 2
-popup/item_3/text = "4 rondas"
-popup/item_3/id = 3
-popup/item_4/text = "5 rondas"
-popup/item_4/id = 4
+min_value = 1.0
+value = 1.0
 
 [node name="Button" type="Button" parent="Control/CanvasLayer/VboxContainer"]
 layout_mode = 2
@@ -163,5 +198,7 @@ transform = Transform3D(1.87, 0, 0, 0, 1.807, 0, 0, 0, 1.87, -0.427, -0.826282, 
 [node name="arrow_teamBlue" parent="." instance=ExtResource("11_gpuwc")]
 transform = Transform3D(1, 0, 0, 0, 0.990095, 0.1404, 0, -0.1404, 0.990095, -4.19003, 1.44564, -3.81777)
 
+[connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer3/modoDeJuego" to="Control" method="_on_modo_de_juego_item_selected"]
 [connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer/CantJugadores" to="Control" method="_on_cant_jugadores_item_selected"]
-[connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer2/CantRondas" to="Control" method="_on_cant_rondas_item_selected"]
+[connection signal="item_selected" from="Control/CanvasLayer/VboxContainer/HBoxContainer4/minijuego" to="Control" method="_on_minijuego_item_selected"]
+[connection signal="value_changed" from="Control/CanvasLayer/VboxContainer/HBoxContainer2/SpinBox" to="Control" method="_on_spin_box_value_changed"]

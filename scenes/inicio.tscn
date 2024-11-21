@@ -19,12 +19,12 @@ sky_cover_modulate = Color(0.962219, 0.87596, 0.836515, 1)
 ground_bottom_color = Color(0.260707, 0.575134, 0.722102, 1)
 ground_horizon_color = Color(0.305882, 0.65098, 0.678431, 1)
 
-[sub_resource type="Sky" id="Sky_ilcl3"]
+[sub_resource type="Sky" id="Sky_erjf8"]
 sky_material = SubResource("ProceduralSkyMaterial_qs7ea")
 
 [sub_resource type="Environment" id="Environment_31cgx"]
 background_mode = 2
-sky = SubResource("Sky_ilcl3")
+sky = SubResource("Sky_erjf8")
 ambient_light_source = 3
 ambient_light_color = Color(0.994689, 0.901946, 0.430528, 1)
 ambient_light_energy = 7.23

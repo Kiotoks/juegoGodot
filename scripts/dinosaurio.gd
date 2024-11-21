@@ -4,7 +4,7 @@ extends Node3D
 @export var spawners : Array[Node3D]
 var cantJugadores = StaticData.cantJugadores
 var jugadores = []
-
+var terminado = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	spawnearJugadores()
@@ -24,6 +24,7 @@ func _process(delta: float) -> void:
 	for jugador in jugadores:
 		if not is_instance_valid(jugador):
 			jugadores.erase(jugador)
-	if len(jugadores) == 1:
+	if len(jugadores) == 1 and not terminado:
 		StaticData.minijuego_terminado(jugadores[0].numero_de_jugador )
+		terminado = true
 	pass

@@ -1,0 +1,153 @@
+[gd_scene load_steps=9 format=3 uid="uid://d03vsmkgjwsft"]
+
+[ext_resource type="Script" path="res://scripts/transicion.gd" id="1_lho7l"]
+[ext_resource type="Texture2D" uid="uid://7ocl7m0bpgfh" path="res://materiales/texturas/icon_color.png" id="2_kaf8n"]
+[ext_resource type="Texture2D" uid="uid://dklllhhfmeo5j" path="res://icon_color2.png" id="3_3rggf"]
+[ext_resource type="Texture2D" uid="uid://b6y1xlwby8kca" path="res://icon_color3.png" id="4_53jie"]
+[ext_resource type="Texture2D" uid="uid://bre17xctx7oy7" path="res://icon_color4.png" id="5_ot55c"]
+
+[sub_resource type="Animation" id="Animation_a1l1g"]
+resource_name = "RESET"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fqk5x"]
+resource_name = "disolve"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wyia"]
+_data = {
+"RESET": SubResource("Animation_a1l1g"),
+"disolve": SubResource("Animation_fqk5x")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_lho7l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_8wyia")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -355.0
+offset_top = -266.0
+offset_right = 1488.0
+offset_bottom = 987.0
+mouse_filter = 2
+color = Color(0.169245, 0.169245, 0.169245, 1)
+
+[node name="scores" type="Node2D" parent="."]
+position = Vector2(13, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="scores"]
+visible = false
+position = Vector2(381, 422)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_kaf8n")
+
+[node name="ColorRect" type="ColorRect" parent="scores/Sprite2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -732.96
+offset_top = -1069.22
+offset_right = -570.96
+offset_bottom = -1035.22
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1e-05)
+color = Color(0.278431, 0.54902, 0.74902, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D4" type="Sprite2D" parent="scores"]
+visible = false
+position = Vector2(505, 422)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_3rggf")
+
+[node name="ColorRect" type="ColorRect" parent="scores/Sprite2D4"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -732.96
+offset_top = -1069.22
+offset_right = -570.96
+offset_bottom = -1035.22
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1e-05)
+color = Color(0.984314, 0.305882, 0.32549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="scores"]
+visible = false
+position = Vector2(630, 422)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("4_53jie")
+
+[node name="ColorRect" type="ColorRect" parent="scores/Sprite2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -732.96
+offset_top = -1069.22
+offset_right = -570.96
+offset_bottom = -1035.22
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1e-05)
+color = Color(0.988235, 0.792157, 0.439216, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="scores"]
+visible = false
+position = Vector2(752, 422)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("5_ot55c")
+
+[node name="ColorRect" type="ColorRect" parent="scores/Sprite2D2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -732.96
+offset_top = -1069.22
+offset_right = -570.96
+offset_bottom = -1035.22
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 1e-05)
+color = Color(0.301961, 0.705882, 0.313726, 1)
+metadata/_edit_use_anchors_ = true

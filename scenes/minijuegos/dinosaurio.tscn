@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bahx65sfynioh"]
+[gd_scene load_steps=10 format=3 uid="uid://bahx65sfynioh"]
 
 [ext_resource type="Script" path="res://scripts/dinosaurio.gd" id="1_jnk5k"]
 [ext_resource type="PackedScene" uid="uid://blj4gfn4dfj3k" path="res://assets/spawner_obstaculo.tscn" id="2_m4gxh"]
 [ext_resource type="PackedScene" uid="uid://d1x57hk5gd5uy" path="res://Models/dae/tileLarge_teamBlue.dae" id="3_33mie"]
+[ext_resource type="MeshLibrary" uid="uid://dmgejyibfvdbl" path="res://grid/grilla.tres" id="4_r373m"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_t5qow"]
 sky_top_color = Color(0.0602959, 0.461494, 0.766921, 1)
@@ -26,14 +27,14 @@ glow_enabled = true
 size = Vector3(5.59808, 1.62683, 6.14478)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2tjiw"]
-size = Vector3(24, 5, 1)
+size = Vector3(65, 5, 2)
 
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("spawners")]
 script = ExtResource("1_jnk5k")
-spawners = [NodePath("spawnersJugadores/Node3D"), NodePath("spawnersJugadores/Node3D2"), NodePath("spawnersJugadores/Node3D3"), NodePath("spawnersJugadores/Node3D4")]
+spawners = [NodePath("spawnersJugadores/Node3D2"), NodePath("spawnersJugadores/Node3D3"), NodePath("spawnersJugadores/Node3D"), NodePath("spawnersJugadores/Node3D4")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -0.34202, 0.939693, 0, 0.939693, 0.34202, -1, 1.49502e-08, -4.10753e-08, 16, 3, 0)
+transform = Transform3D(-4.37114e-08, -0.34202, 0.939693, 0, 0.939693, 0.34202, -1, 1.49502e-08, -4.10753e-08, 32, 3, 0)
 fov = 70.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -44,18 +45,19 @@ transform = Transform3D(-0.739081, -0.457937, 0.494017, 0.62139, -0.18035, 0.762
 shadow_enabled = true
 
 [node name="spawnersJugadores" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
 
 [node name="Node3D" type="Node3D" parent="spawnersJugadores"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.28552, -2.47074, 6.14895)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, 3.149)
 
 [node name="Node3D2" type="Node3D" parent="spawnersJugadores"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, 3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, 1)
 
 [node name="Node3D3" type="Node3D" parent="spawnersJugadores"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -1)
 
 [node name="Node3D4" type="Node3D" parent="spawnersJugadores"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, -2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -2, -3)
 
 [node name="tileLarge_teamBlue" parent="." instance=ExtResource("3_33mie")]
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 4, 5, -3, 0)
@@ -67,15 +69,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.179047, 0.313416, 0.045179
 shape = SubResource("BoxShape3D_2knqy")
 
 [node name="spawnersObstaculos" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0)
 
 [node name="spawnerObstaculo" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, -2)
 
+[node name="spawnerObstaculo10" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.73142, -4)
+
+[node name="spawnerObstaculo11" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.73142, 4)
+
 [node name="spawnerObstaculo7" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, -8)
-
-[node name="spawnerObstaculo8" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, -9)
 
 [node name="spawnerObstaculo9" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, -6)
@@ -87,38 +93,42 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 2)
 
 [node name="spawnerObstaculo4" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 6)
 
 [node name="spawnerObstaculo5" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 7)
-
-[node name="spawnerObstaculo6" parent="spawnersObstaculos" instance=ExtResource("2_m4gxh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, -1.86571, 8)
 
 [node name="Pared" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 1, 0)
 shape = SubResource("BoxShape3D_2tjiw")
 
 [node name="Pared2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 1.5)
 shape = SubResource("BoxShape3D_2tjiw")
 
 [node name="Pared3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9, 0, 11)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 19)
 shape = SubResource("BoxShape3D_2tjiw")
 
 [node name="Pared4" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -18, 0, 11)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Pared4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 18)
 shape = SubResource("BoxShape3D_2tjiw")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("4_r373m")
+data = {
+"cells": PackedInt32Array(-131044, 5, 655376, -131045, 5, 655376, -131046, 5, 655376, -131047, 5, 655376, -131048, 5, 655376, -131049, 5, 655376, -131051, 5, 655376, -131050, 5, 655376, -131052, 5, 655376, -131053, 5, 655376, -131054, 5, 655376, -131055, 5, 655376, -131056, 5, 655376, -131057, 5, 655376, -131058, 5, 655376, -131059, 5, 655376, -131060, 5, 655376, -131061, 5, 655376, -131062, 5, 655376, -131063, 5, 655376, -131064, 5, 655376, -131065, 5, 655376, -131066, 5, 655376, -131067, 5, 655376, -131068, 5, 655376, -131069, 5, 655376, -131070, 5, 655376, -131071, 5, 655376, -131072, 5, 655376, -65538, 5, 655376, -65537, 5, 655376, -65539, 5, 655376, -65540, 5, 655376, -65541, 5, 655376, -65542, 5, 655376, -65543, 5, 655376, -65544, 5, 655376, -65544, 65530, 655376, -65543, 65530, 655376, -65542, 65530, 655376, -65541, 65530, 655376, -65540, 65530, 655376, -65539, 65530, 655376, -65538, 65530, 655376, -65537, 65530, 655376, -131072, 65530, 655376, -131071, 65530, 655376, -131070, 65530, 655376, -131069, 65530, 655376, -131068, 65530, 655376, -131067, 65530, 655376, -131066, 65530, 655376, -131065, 65530, 655376, -131064, 65530, 655376, -131063, 65530, 655376, -131062, 65530, 655376, -131061, 65530, 655376, -131060, 65530, 655376, -131059, 65530, 655376, -131058, 65530, 655376, -131057, 65530, 655376, -131056, 65530, 655376, -131055, 65530, 655376, -131054, 65530, 655376, -131053, 65530, 655376, -131052, 65530, 655376, -131051, 65530, 655376, -131050, 65530, 655376, -131049, 65530, 655376, -131048, 65530, 655376, -131047, 65530, 655376, -131046, 65530, 655376, -131045, 65530, 655376, -131044, 65530, 655376, -65509, 65530, 655361, -65512, 65530, 655361, -65515, 65530, 655361, -65518, 65530, 655361, -65521, 65530, 655361, -65524, 65530, 655361, -65527, 65530, 655361, -65530, 65530, 655361, -65509, 5, 655361, -65512, 5, 655361, -65515, 5, 655361, -65518, 5, 655361, -65521, 5, 655361, -65524, 5, 655361, -65527, 5, 655361, -65530, 5, 655361, -65533, 5, 655361, -65536, 5, 655361, -3, 5, 655361, -6, 5, 655361, -65533, 65530, 655361, -65536, 65530, 655361, -3, 65530, 655361, -6, 65530, 655361, -8, 5, 655376, -8, 65530, 655376, -8, 4, 655376, -8, 3, 655376, -8, 2, 655376, -8, 1, 655376, -8, 0, 655376, -8, 65535, 655376, -8, 65534, 655376, -8, 65533, 655376, -8, 65532, 655376, -8, 65531, 655376, -65544, 4, 655376, -65544, 3, 655376, -65544, 2, 655376, -65544, 1, 655376, -65544, 0, 655376, -65544, 65535, 655376, -65544, 65534, 655376, -65544, 65533, 655376, -65544, 65532, 655376, -65544, 65531, 655376)
+}
+metadata/_editor_floor_ = Vector3(0, -2, 0)

@@ -1,10 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://blj4gfn4dfj3k"]
+[gd_scene load_steps=4 format=3 uid="uid://blj4gfn4dfj3k"]
 
 [ext_resource type="Script" path="res://scripts/spawner_obstaculo.gd" id="1_tt7xe"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8gxmx"]
+albedo_color = Color(0.14808, 0.281119, 0.512511, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4pwts"]
+material = SubResource("StandardMaterial3D_8gxmx")
 
 [node name="spawnerObstaculo" type="Node3D"]
 script = ExtResource("1_tt7xe")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.31134e-08, 36.4545, 0, -0.3, -1.59348e-06, 0, 0, 0, 0.3, 36.371, 0, 0)
+mesh = SubResource("CylinderMesh_4pwts")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
